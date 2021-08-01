@@ -1,0 +1,31 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:style/Theme.DeviceDefault.Light.DarkActionBar" />
+
+    <style name="btn_white_text_style">
+	     <item name="android:textSize">14sp</item>
+	     <item name="android:textStyle">normal</item>
+	     <item name="android:textColor">#FFffffff</item>
+	     <item name="android:textColorHint">#FFffffff</item>
+    </style>
+    
+     <style name="txt_title_style">
+	     <item name="android:textSize">14sp</item>
+	     <item name="android:textStyle">bold</item>
+	     <item name="android:textColor">#FF333333</item>
+    </style>
+    
+     <style name="btn_bottom_style">
+	     <item name="android:textSize">14sp</item>
+	     <item name="android:textColor">#FFf8f8f8</item>
+	     <item name="android:paddingTop">10dip</item>
+	     <item name="android:paddingBottom">10dip</item>
+    </style>
+    
+     <style name="txt_cont_style">
+	     <item name="android:textSize">15sp</item>
+	     <item name="android:textColor">#FF333333</item>
+	     <item name="android:gravity">left|center_vertical</item>
+	     <item name="android:paddingLeft">5dip</item>
+    </style>
+</resources>

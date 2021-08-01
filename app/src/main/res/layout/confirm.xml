@@ -1,0 +1,314 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#FFfcfcfc"
+	android:orientation="vertical"
+	android:padding="10dip"
+	tools:ignore="Overdraw">
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ttlogo"
+		android:contentDescription="@string/descriptionss" />
+   	
+    <TextView 
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginTop="15dip"
+   	    android:background="@drawable/white_table_bg"
+   	    android:textSize="15sp"
+   	    android:textColor="#FF333333"
+   	    android:id="@+id/txtConfirmDesc"
+   	    android:text="@string/confirmdesc" />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:weightSum="6"
+        android:background="@drawable/textfield"
+        android:layout_marginTop="20dip"
+        android:padding="5dip"
+        android:orientation="vertical">
+        
+        	<ScrollView 
+        	    android:layout_width="fill_parent"
+        	    android:layout_height="fill_parent"
+        	    android:scrollbars="none"
+				tools:ignore="UselessParent">
+        		
+        	    	<LinearLayout 
+        	    	    android:layout_width="fill_parent"
+        	    	    android:layout_height="wrap_content"
+        	    	    android:orientation="vertical">
+        	    	    
+        	    	    	<LinearLayout 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:paddingTop="7dip"
+				        	    android:paddingBottom="7dip"
+				        	    android:orientation="horizontal"
+				        	    android:gravity="center_vertical">
+				        	    
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="5"
+						   	    	    android:layout_marginRight="15dip"
+						   	    	    style="@style/txt_title_style"
+						   	    	    android:text="@string/waitoffer"
+										android:layout_marginEnd="15dip" />
+				        	    	
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="6"
+						   	    	    style="@style/txt_cont_style"
+						   	    	    android:id="@+id/txtWaitOffer" />
+				        	    	
+				        	</LinearLayout>
+				        	
+				        	<ImageView 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:layout_marginBottom="5dip"
+				        	    android:background="@drawable/area_list_line"
+								android:contentDescription="@string/descriptionss" />
+        	    	
+        	    	
+		        	    	<LinearLayout 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:paddingTop="7dip"
+				        	    android:paddingBottom="7dip"
+				        	    android:orientation="horizontal"
+				        	    android:gravity="center_vertical">
+				        	    
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="5"
+						   	    	    android:layout_marginRight="15dip"
+						   	    	    style="@style/txt_title_style"
+						   	    	    android:text="@string/emailaddr"
+										android:layout_marginEnd="15dip" />
+				        	    	
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="6"
+						   	    	    style="@style/txt_cont_style"
+						   	    	    android:id="@+id/txtEmailaddr" />
+				        	    	
+				        	</LinearLayout>
+				        	
+				        	<ImageView 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:layout_marginBottom="5dip"
+				        	    android:background="@drawable/area_list_line"
+								android:contentDescription="@string/descriptionss" />
+
+							<LinearLayout
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:paddingTop="7dip"
+							android:paddingBottom="7dip"
+							android:orientation="horizontal"
+							android:gravity="center_vertical">
+
+							<TextView
+								android:layout_width="0dip"
+								android:layout_height="wrap_content"
+								android:layout_weight="5"
+								android:layout_marginRight="15dip"
+								style="@style/txt_title_style"
+								android:text="@string/country"
+								android:id="@+id/txtDestinationCountry"
+								android:layout_marginEnd="15dip" />
+
+							<TextView
+								android:layout_width="0dip"
+								android:layout_height="wrap_content"
+								android:layout_weight="6"
+								style="@style/txt_cont_style"
+								android:id="@+id/txtCountry" />
+
+							</LinearLayout>
+
+							<LinearLayout
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:paddingTop="7dip"
+				        	    android:paddingBottom="7dip"
+				        	    android:orientation="horizontal"
+				        	    android:gravity="center_vertical">
+				        	    
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="5"
+						   	    	    android:layout_marginRight="15dip"
+						   	    	    style="@style/txt_title_style"
+						   	    	    android:text="@string/location"
+										android:id="@+id/txtPlaceDelivery"
+										android:layout_marginEnd="15dip" />
+				        	    	
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="6"
+						   	    	    style="@style/txt_cont_style"
+						   	    	    android:id="@+id/txtLocation" />
+				        	    	
+				        	</LinearLayout>
+				        	
+				        	<ImageView 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:layout_marginBottom="5dip"
+				        	    android:background="@drawable/area_list_line"
+								android:contentDescription="@string/descriptionss" />
+				        	
+				        	<LinearLayout 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:paddingTop="7dip"
+				        	    android:paddingBottom="7dip"
+				        	    android:orientation="horizontal"
+				        	    android:gravity="center_vertical">
+				        	    
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="5"
+						   	    	    android:layout_marginRight="15dip"
+						   	    	    style="@style/txt_title_style"
+						   	    	    android:text="@string/dateoffer"
+										android:layout_marginEnd="15dip" />
+				        	    	
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="6"
+						   	    	    style="@style/txt_cont_style"
+						   	    	    android:id="@+id/txtDateOffer" />
+				        	    	
+				        	</LinearLayout>
+				        	
+				        	<ImageView 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:layout_marginBottom="5dip"
+				        	    android:background="@drawable/area_list_line"
+								android:contentDescription="@string/descriptionss" />
+				        	
+				        	<LinearLayout 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:paddingTop="7dip"
+				        	    android:paddingBottom="7dip"
+				        	    android:orientation="horizontal"
+				        	    android:gravity="center_vertical">
+				        	    
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="5"
+						   	    	    android:layout_marginRight="15dip"
+						   	    	    style="@style/txt_title_style"
+						   	    	    android:text="@string/delivtime"
+										android:layout_marginEnd="15dip" />
+				        	    	
+				        	    	<TextView 
+						   	    	    android:layout_width="0dip"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_weight="6"
+						   	    	    style="@style/txt_cont_style"
+						   	    	    android:id="@+id/txtDelivtime" />
+				        	    	
+				        	</LinearLayout>
+				        	
+				        	<ImageView 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:layout_marginBottom="5dip"
+				        	    android:background="@drawable/area_list_line"
+								android:contentDescription="@string/descriptionss" />
+				        	    
+				        	<LinearLayout 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="wrap_content"
+				        	    android:paddingTop="7dip"
+				        	    android:paddingBottom="7dip"
+				        	    android:orientation="horizontal"
+				        	    android:gravity="center_vertical">
+				        	    
+				        	    	<TextView 
+						   	    	    android:layout_width="fill_parent"
+						   	    	    android:layout_height="wrap_content"
+						   	    	    android:layout_marginRight="15dip"
+						   	    	    style="@style/txt_title_style"
+						   	    	    android:text="@string/recipe"
+										android:layout_marginEnd="15dip" />
+				        	    	
+				        	    	
+				        	</LinearLayout>
+				        	
+				        	<TextView 
+				        	    android:layout_width="fill_parent"
+				        	    android:layout_height="180dip"
+				        	    android:textSize="14sp"
+				        	    android:textColor="#FF333333"
+				        	    android:gravity="left|top"
+				        	    android:id="@+id/txtRecipeDesc"
+								tools:ignore="RtlHardcoded" />
+				        	
+        	    	</LinearLayout>
+        	</ScrollView>
+    
+    </LinearLayout>
+    
+   	
+   	<LinearLayout 
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="wrap_content"
+   	    android:paddingTop="15dip"
+   	    android:paddingBottom="5dip"
+   	    android:orientation="horizontal"
+   	    android:gravity="center_vertical">
+   	    
+   	    	<Button 
+   	    	    android:layout_width="0dip"
+   	    	    android:layout_height="wrap_content"
+   	    	    android:layout_weight="1"
+   	    	    android:layout_marginRight="10dip"
+   	    	    style="@style/btn_bottom_style"
+   	    	    android:background="@drawable/btn_black"
+   	    	    android:text="@string/cancel"
+   	    	    android:id="@+id/btnCancel"
+				android:layout_marginEnd="10dip" />
+   	    	
+   	    	<Button 
+   	    	    android:layout_width="0dip"
+   	    	    android:layout_height="wrap_content"
+   	    	    android:layout_weight="1"
+   	    	    android:layout_marginRight="10dip"
+   	    	    style="@style/btn_bottom_style"
+   	    	    android:background="@drawable/btn_blue_s"
+   	    	    android:text="@string/change"
+   	    	    android:id="@+id/btnChange"
+				android:layout_marginEnd="10dip" />
+   	    	
+   	    	<Button 
+   	    	    android:layout_width="0dip"
+   	    	    android:layout_height="wrap_content"
+   	    	    android:layout_weight="1"
+   	    	    style="@style/btn_bottom_style"
+   	    	    android:background="@drawable/btn_green"
+   	    	    android:text="@string/submit"
+   	    	    android:id="@+id/btnSubmit" />
+   	</LinearLayout>
+</LinearLayout>

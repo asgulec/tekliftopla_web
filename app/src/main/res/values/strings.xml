@@ -1,0 +1,70 @@
+﻿<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_id" translatable="false">1833458963559179</string>
+
+    <string name="locale">en</string>
+    <string name="app_name">tekliftopla</string>
+
+    <string name="welcome">welcome to tekliftopla</string>
+    <string name="fblogin">Facebook login</string>
+    <string name="gologin">Google login</string>
+
+    <string name="topdesc1">"Dear "</string>
+    <string name="topdesc2">" please enter the details of the goods or services that you request."</string>
+    <string name="city">City of Delivery:</string>
+    <string name="date">Deadline for Proposal:</string>
+    <string name="period">Delivery Period:</string>
+    <string name="desc">Description of goods or services requested in English:</string>
+    <string name="hint">(Details will increase speed and relevance of replies. Max 250 characters..)</string>
+    <string name="cancel">Cancel</string>
+    <string name="forward">Next</string>
+    <string name="help">Help</string>
+    <string name="change">Change</string>
+    <string name="submit">Send</string>
+    
+    <string name="corresponding">Warning</string>
+    <string name="exitalert">Exit the application ?</string>
+    <string name="initalert">Pressing \"Yes\" button will cancel your request !</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <string name="inputrecipe">Enter description of goods or services requested.</string>
+    <string name="selectcity">Select City</string>
+    <string name="ok">OK</string>
+    <string name="helpstring">"tekliftopla" is a popular phrase in Turkish meaning collect offers or get quotations.\n\ntekliftopla
+        sends request for proposal (RFP) e-mails drafted by its users to suppliers in Turkey related to the goods and services described
+        in the RFP.\n\ntekliftopla will only convey the RFP message and is not involved in the following stages of negotiations or
+        agreement if any. \n\nUsage is free of charge.\n\nFor further information visit our web
+        site <a href="http://www.tekliftopla.com"> www.tekliftopla.com </a> .</string>
+    <string name="vername">Version 3.00</string>
+    <string name="conditions">Internet connection is required for usage. \n\nThis software is provided "as is" and any expressed or
+        implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose
+        are disclaimed.\n\nSoftware or registered trade marks cannot be used inside or as a part of another software.
+        \n\nUser will accept these conditions by pressing the \"Yes\" button.</string>
+
+    <string name="confirmdesc">Please check the information you have submitted and press \"Send\" button.</string>
+    
+    <string name="waitoffer">RFP by:</string>
+    <string name="emailaddr">Correspondence:</string>
+    <string name="location">Place of Delivery:</string>
+    <string name="dateoffer">Deadline for RFP:</string>
+    <string name="delivtime">Delivery Period:</string>
+    <string name="recipe">Description of goods or services requested:</string>
+    <string name="descriptionss" translatable="false">logo t</string>
+    <string name="msgwait" tools:ignore="TypographyEllipsis">Please wait...</string>
+    <string name="checkinternet">Check your internet connection.</string>
+    <string name="setsuccess">Your request for proposal has been received.\n\nYour RFP will be e-mailed to relevant suppliers in Turkey.
+        You will also receive a confirmation e-mail.</string>
+    <string name="serverfail">Server error !</string>
+    	
+	<string name="select">Select</string>
+    <string name="country">Destination Country:</string>
+    <string name="selectcountry">Select country</string>
+    
+    <string-array name="periodu">
+        <item>Day(s)</item>
+        <item>Week(s)</item>
+        <item>Month(s)</item>
+        <item>Year(s)</item>
+    </string-array>
+</resources>
