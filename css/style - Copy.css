@@ -1,0 +1,221 @@
+	.input			{ font-family:Verdana; font-size:8pt; color:#000000;  background-color:#FFFFFF; }
+	.onay			{ font-family:Verdana; font-size:8pt; color:#000000; background-color:#FFFFFF; }
+	.select			{ font-family:Verdana; font-size:8pt; color:#000000; border:1px solid #656654; background-color:#FFFFFF; }
+    .title			{ FONT-SIZE: 12pt; color:#360; FONT-FAMILY: verdana; font-weight: bold;}
+	.title_kucuk	{ FONT-SIZE: 9pt; color:#360; FONT-FAMILY: verdana;}
+	.not			{ FONT-SIZE: 8pt; color:#77A20D; FONT-FAMILY: verdana;}
+    .resim          {		cursor: pointer; }
+	.Buyuk_Yazi     { FONT-SIZE: 14pt; color: #7FAC06; FONT-FAMILY: verdana;font-weight: bold;}
+	.link			{ FONT-SIZE: 9pt; color:3B7FBD; FONT-FAMILY: verdana; }
+	.govde          { FONT-SIZE: 8pt; color:#000000; FONT-FAMILY: verdana; font-weight: normal;}
+	.Baslik			{ FONT-SIZE: 10pt; color:#000000; FONT-FAMILY: verdana;	font-weight: bold;}
+	.ResimDugme 	{ cursor: pointer;}
+	.Dugme { border: 1px outset #676651; cursor: pointer; font-family:Verdana; font-size:8pt; font-weight:bold; color:black;				margin:0px 0px 0px 0px;	padding: 1px 1px 1px 1px; background-image: url(buton_zemin.gif); backgroung-image: repeat-x;}
+	.AnaBaslik		{ FONT-SIZE: 10pt; color:#FFFFFF;	FONT-FAMILY: verdana; font-weight: bold; }
+	.hidden			{display: none;}
+	img {    vertical-align: top;}
+	
+	.text_v {font-family:verdana; font-size:8px;}
+	.text_s {font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif; font-size:12px; }
+	.text_c {font-family:Century Gothic, Trebuchet MS, "HelveticaNeue-Bold" , "HelveticaNeue" , Helvetica, Arial, sans-serif;font-size:12px; }
+	.text_g {font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 12px;font-size:12px}
+	
+
+div.ui-datepicker {
+    font-size: 75%;
+}
+
+#sayfa {
+	width:731px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#ust {
+	width:731px;
+	height:auto;
+}
+#bant1 {
+	width:731px;
+	height:2px;
+	background:#FFFFFF;
+	float: left;
+}
+#sol {
+	width:176px;
+	min-height:375px;
+	float:left;
+	overflow:hidden;
+}
+#sat1 {
+	width:100%;
+	height:192px;
+	overflow:hidden;
+}
+#sat2 {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	
+}
+#sat2g {
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	background:#EFEFEF;
+}
+#ana {
+	width:400px;
+	height:auto;
+	float:left;
+	overflow:hidden;
+}
+#sag {
+	width:155px;
+	height:auto;
+	float:left;
+	overflow:hidden;
+}
+#alt {
+	width:731px;
+	height:auto;
+	float:left;
+	overflow:hidden;
+}
+#analong {
+	width:555px;
+	float:left;
+	overflow:auto;
+	height:auto;
+}
+
+
+.buttonMenu {
+	background-color:#f9f9f9;
+	-webkit-border-top-left-radius:4px;
+	-moz-border-radius-topleft:4px;
+	border-top-left-radius:4px;
+	-webkit-border-top-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	border-top-right-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-moz-border-radius-bottomright:4px;
+	border-bottom-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-bottomleft:4px;
+	border-bottom-left-radius:4px;
+	text-indent:5px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#666666;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	font-style:normal;
+	height:16px;
+	line-height:16px;
+	width:150px;
+	text-decoration:none;
+	text-align:left;
+}.buttonMenu:hover {
+	background-color:#e9e9e9;
+}.buttonMenu:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+
+
+.buttonPage {
+	background-color:#ededed;
+	-webkit-border-top-left-radius:4px;
+	-moz-border-radius-topleft:4px;
+	border-top-left-radius:4px;
+	-webkit-border-top-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	border-top-right-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-moz-border-radius-bottomright:4px;
+	border-bottom-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-bottomleft:4px;
+	border-bottom-left-radius:4px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#666666;;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	height:16px;
+	line-height:16px;
+	width:135px;
+	text-decoration:none;
+	text-align:center;
+}.buttonPage:hover {
+	background-color:#dfdfdf;
+}.buttonPage:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?pz2bkl');
+	src:url('fonts/icomoon.eot?#iefixpz2bkl') format('embedded-opentype'),
+		url('fonts/icomoon.woff?pz2bkl') format('woff'),
+		url('fonts/icomoon.ttf?pz2bkl') format('truetype'),
+		url('fonts/icomoon.svg?pz2bkl#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-stop:before {
+	content: "\e600";
+    
+}
+.icon-stop-b:before {
+	content: "\e600";
+    color: #294590; 
+	font-size:10px;
+}
+.icon-arrow-right:before {
+	content: "\e601";
+	font-size: 14px; color: #5D781B;
+}
+.icon-arrow-right-p:before {
+	content: "\e601";
+	
+}
+.icon-arrow-left:before {
+	content: "\e602";
+	font-size: 14px;
+	color: #294590;
+}
+.icon-checkmark:before {
+	content: "\e603";
+}
+.icon-close:before {
+	content: "\e604";
+	font-size: 14px; color: #B70606;
+}
+.icon-arrow-down:before {
+	content: "\e605";
+}

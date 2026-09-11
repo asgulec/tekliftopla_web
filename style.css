@@ -1,0 +1,104 @@
+	.input			{ font-family:Verdana; font-size:8pt; color:#000000;  background-color:#FFFFFF; }
+	.onay			{ font-family:Verdana; font-size:8pt; color:#000000; background-color:#FFFFFF; }
+	.select			{ font-family:Verdana; font-size:8pt; color:#000000; border:1px solid #656654; background-color:#FFFFFF; }
+    .title			{ FONT-SIZE: 12pt; color:#360; FONT-FAMILY: verdana; font-weight: bold;}
+	.title_kucuk	{ FONT-SIZE: 9pt; color:#360; FONT-FAMILY: verdana;}
+	.not			{ FONT-SIZE: 8pt; color:#77A20D; FONT-FAMILY: verdana;}
+    .resim          {		cursor: pointer; }
+	.Buyuk_Yazi     {
+	FONT-SIZE: 14pt;
+	color: #7FAC06;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+	.link			{ FONT-SIZE: 8pt; color:3B7FBD; FONT-FAMILY: verdana; }
+	.govde			{ FONT-SIZE: 8pt; color:#000000; FONT-FAMILY: verdana;}
+	.Baslik			{ FONT-SIZE: 10pt; color:#000000; FONT-FAMILY: verdana;	font-weight: bold;}
+	.ResimDugme 	{ cursor: pointer;}
+	.Dugme { border: 1px outset #676651; cursor: pointer; font-family:Verdana; font-size:8pt; font-weight:bold; color:black;				margin:0px 0px 0px 0px;	padding: 1px 1px 1px 1px; background-image: url(buton_zemin.gif); backgroung-image: repeat-x;}
+	.AnaBaslik		{
+	FONT-SIZE: 10pt;
+	color: #B70606;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+	.hidden			{display: none;}
+	
+	.inputy			{
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+	.onayy			{
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+	.selecty			{
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	border: 1px solid #656654;
+	background-color: #FFFFFF;
+}
+    .titley			{
+	FONT-SIZE: 15px;
+	color: #360;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+	.title_kucuky	{
+	FONT-SIZE: 12px;
+	color: #360;
+	FONT-FAMILY: verdana;
+}
+	.noty			{
+	FONT-SIZE: 10px;
+	color: #77A20D;
+	FONT-FAMILY: verdana;
+}
+    .resimy          {		cursor: pointer; }
+	.Buyuk_Yaziy     {
+	FONT-SIZE: 19px;
+	color: #7FAC06;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+	.linky			{
+	FONT-SIZE: 10px;
+	color: 3B7FBD;
+	FONT-FAMILY: verdana;
+}
+	.govdey			{
+	FONT-SIZE: 11px;
+	color: #000000;
+	FONT-FAMILY: verdana;
+}
+	.Basliky			{
+	FONT-SIZE: 12px;
+	color: #000000;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+	.ResimDugmey 	{ cursor: pointer;}
+	.Dugmey {
+	border: 1px outset #676651;
+	cursor: pointer;
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: black;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 1px 1px 1px;
+	background-image: url(buton_zemin.gif);
+	backgroung-image: repeat-x;
+}
+	.AnaBasliky		{
+	FONT-SIZE: 12px;
+	color: #B70606;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+	.hiddeny		{display: none;}

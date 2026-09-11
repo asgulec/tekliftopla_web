@@ -1,0 +1,65 @@
+SetEnv PHPRC /home3/tekliftopla/public_html/php.ini
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/ttbaglan-2.php$
+RewriteCond %{REQUEST_URI} !^/reklamlar/
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [QSA,L]
+
+#RewriteEngine on
+#RewriteOptions inherit
+#RewriteCond %{SERVER_PORT} 80
+#RewriteCond %{REQUEST_URI} !^/ttbaglan-2.php$ [NC] [OR]
+#RewriteCond %{REQUEST_URI} !^/reklamlar/
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteRule ^(.*)$ https://www.tekliftopla.com/$1 [R,L]
+
+#RewriteCond %{SERVER_PORT} !80
+#RewriteCond %{REQUEST_URI} ^/ttbaglan-2.php$ [NC] [OR]
+#RewriteCond %{REQUEST_URI} ^/reklamlar/
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteRule ^(.*)$ http://www.tekliftopla.com/$1 [R,L]
+
+AddCharset utf-8 .js
+Options -Indexes
+
+#RewriteCond %{HTTP_REFERER} !^http://tekliftopla.com/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://tekliftopla.com$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://tekliftopla.com.tr/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://tekliftopla.com.tr$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://www.tekliftopla.com/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://www.tekliftopla.com$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://www.tekliftopla.com.tr/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^http://www.tekliftopla.com.tr$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://tekliftopla.com/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://tekliftopla.com$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://tekliftopla.com.tr/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://tekliftopla.com.tr$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://www.tekliftopla.com/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://www.tekliftopla.com$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://www.tekliftopla.com.tr/.*$      [NC]
+#RewriteCond %{HTTP_REFERER} !^https://www.tekliftopla.com.tr$      [NC]
+#RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+
+</IfModule>
+<IfModule lsapi_module>
+
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73___lsphp .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

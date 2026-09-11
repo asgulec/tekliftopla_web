@@ -1,0 +1,3 @@
+css ye eklenecek satýr
+
+	.Buyuk_Yazi     { FONT-SIZE: 16pt; color: #7FAC06; FONT-FAMILY: Futura XBlkCn BT;}

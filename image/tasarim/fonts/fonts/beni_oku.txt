@@ -1,0 +1,7 @@
+Bu klasorun icinde 3 cesit font ve onlarin degisik versiyonlari var.
+var olan fontlar : 
+- Zurich
+- Swiss
+- Futura
+
+Fontlar turkce karakterleri destekliyor

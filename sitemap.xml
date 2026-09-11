@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://www.tekliftopla.com/en/index-e.php;https://www.tekliftopla.com/index.php</loc>
+		<xhtml:link rel="alternate" hreflang="en;tr" href="https://www.tekliftopla.com/en/index-e.php;https://www.tekliftopla.com/index.php" />
+	</url>
+	<url>
+		<loc>https://www.tekliftopla.com/en/tanitim-e.php;https://www.tekliftopla.com/tanitim.php</loc>
+		<xhtml:link rel="alternate" hreflang="en;tr" href="https://www.tekliftopla.com/en/tanitim-e.php;https://www.tekliftopla.com/tanitim.php" />
+	</url>
+	<url>
+		<loc>https://www.tekliftopla.com/en/contact-e.php;https://www.tekliftopla.com/iletisim_bilgileri.php</loc>
+		<xhtml:link rel="alternate" hreflang="en;tr" href="https://www.tekliftopla.com/en/contact-e.php;https://www.tekliftopla.com/iletisim_bilgileri.php" />
+	</url>
+	<url>
+		<loc>https://www.tekliftopla.com/en/soruoneri-e.php;https://www.tekliftopla.com/soruoneri.php</loc>
+		<xhtml:link rel="alternate" hreflang="en;tr" href="https://www.tekliftopla.com/en/soruoneri-e.php;https://www.tekliftopla.com/soruoneri.php" />
+	</url>
+</urlset>
