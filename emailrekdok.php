@@ -49,6 +49,7 @@ require_once("class.phpmailer.php"); //Require file
 	$mail->Password = $infopass; //Þifre
 	//$mail->Port = 587;
 	$mail->IsHTML(true);
+	$mail->Encoding = "base64";
 	$mail->CharSet = "UTF-8";
 	$mail->From 	= "info@tekliftopla.com";
 	$mail->Fromname = "tekliftopla";

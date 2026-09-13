@@ -22,13 +22,15 @@ window.location = "tradmin.php";
 }
 $teklifid = $_GET["teklifid"];
 $stryy1="SELECT  bilgi.Firma_Adi, bilgi.email, kullanim.text, kullanim.dil FROM kullanim, bilgi where kullanim.firmaid=bilgi.firmaid and     kullanim.Kullanimid='$teklifid'";
-    $last=mysqli_query($coni,$stryy1);
-    $raw=mysqli_fetch_array($last);
-    $frm=$raw['Firma_Adi'];
-	$kime=$raw['email'];
-	$metin=$raw['text'];
-	$dil=$raw['dil'];
-    error_reporting(63);
+$last=mysqli_query($coni,$stryy1);
+$raw=mysqli_fetch_array($last);
+$frm = isset($raw['Firma_Adi']) ? $raw['Firma_Adi'] : '';
+$kime = isset($raw['email']) ? $raw['email'] : '';
+$metin = isset($raw['text']) ? $raw['text'] : '';
+$dil = isset($raw['dil']) ? $raw['dil'] : '';
+$frmHtml = htmlspecialchars($frm, ENT_QUOTES, 'UTF-8');
+$metinHtml = htmlspecialchars($metin, ENT_QUOTES, 'UTF-8');
+error_reporting(63);
 if ($dil=='TUR') {    
 $konu="Doğrudan iptal edilen " .$teklifid." numaralı kullanım.";
 $varsayilan_reklam=mysqli_fetch_array(mysqli_query($coni,"select grafik,link from rekkayit where rektip=13 order by kaytarih desc limit 0,1"));
@@ -49,11 +51,15 @@ $html = '
      <table width="600" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="#F9F9F9">
       <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
       <tr> 
-       <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
-	   <td bgcolor="#FFFFFF" align="center"><a href="'.$varsayilan_reklam['link'].'"><img src= "http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" ></a></td>
+      <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
+    	   <td bgcolor="#FFFFFF" align="center"><a href="'.$varsayilan_reklam['link'].'"><img src= "http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" ></a></td>
        </tr>
       <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
-      <tr> 
+    	 <tr>
+      <td colspan="2" align="center"><a href="http://www.tekliftopla.com"><img src= "http://www.tekliftopla.com/'.$randombanner.'" ></a>
+      </td>
+      </tr>
+        <tr>
         <td colspan="2" ><div align="left"> 
         <p class="mesaj1"> İyi günler,<br><br>
  tekliftopla.com kullanım şartlarına uymayan aşağıdaki mesaj iptal edilmiştir.<br><br>
@@ -71,14 +77,14 @@ Saygılarımızla<br>
                 </tr>
                 <tr> 
                   <td align="left" class="mesaj2">Kullanıcı:</td>
-                  <td class="mesaj1">'. $frm .' </td>
+                  <td class="mesaj1">'. $frmHtml .' </td>
                 </tr>
 				<tr bgcolor="#EFEFEF"> 
                   <td colspan="2"><font color="#6E9807"><img src="trans.gif" width="1" height="2"></font></td>
                 </tr>
                 <tr> 
                   <td align="left" class="mesaj2">Mesaj metini:</td>
-                  <td class="mesaj1">'. $metin .' </td>
+                  <td class="mesaj1">'. $metinHtml .' </td>
                 </tr>
                 </table></td>
           </tr>
@@ -90,10 +96,6 @@ Saygılarımızla<br>
       <tr> 
       <td colspan="2" >&nbsp;</td>
       </tr>
-     <tr>
-  <td colspan="2" align="center"><a href="http://www.tekliftopla.com"><img src= "http://www.tekliftopla.com/'.$randombanner.'" ></a>
-  </td>
-  </tr>
 	 <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
      </table>
      </body>
@@ -121,11 +123,15 @@ $html = '
      <table width="600" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="#F9F9F9">
      <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
       <tr> 
-       <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
-	   <td bgcolor="#FFFFFF" align="center"><a href="'.$varsayilan_reklam['link'].'"><img src= "http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" ></a></td>
+      <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
+    	   <td bgcolor="#FFFFFF" align="center"><a href="'.$varsayilan_reklam['link'].'"><img src= "http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" ></a></td>
        </tr>
       <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
-      <tr> 
+    	 <tr>
+      <td colspan="2" align="center"><a href="http://www.tekliftopla.com"><img src= "http://www.tekliftopla.com/'.$randombanner.'" ></a>
+      </td>
+      </tr>
+        <tr>
         <td colspan="2" ><div align="left"> 
         <p class="mesaj1"> Goodday ! <br>
             <br>
@@ -142,14 +148,14 @@ Below RFP is canceled directly.<br><br>tekliftopla.com <br><br></p>
                 </tr>
                 <tr> 
                   <td align="left" class="mesaj2">User nameı:</td>
-                  <td class="mesaj1">'. $frm .' </td>
+                  <td class="mesaj1">'. $frmHtml .' </td>
                 </tr>
 				<tr bgcolor="#EFEFEF"> 
                   <td colspan="2"><font color="#6E9807"><img src="trans.gif" width="1" height="2"></font></td>
                 </tr>
                 <tr> 
                   <td align="left" class="mesaj2">RFP text:</td>
-                  <td class="mesaj1">'. $metin .' </td>
+                  <td class="mesaj1">'. $metinHtml .' </td>
                 </tr>
                 </table></td>
           </tr>
@@ -161,10 +167,6 @@ Below RFP is canceled directly.<br><br>tekliftopla.com <br><br></p>
       <tr> 
       <td colspan="2" >&nbsp;</td>
       </tr>
-     <tr>
-  <td colspan="2" align="center"><a href="http://www.tekliftopla.com"><img src= "http://www.tekliftopla.com/'.$randombanner.'" ></a>
-  </td>
-  </tr>
 	 <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
      </table>
      </body>
@@ -174,7 +176,7 @@ Below RFP is canceled directly.<br><br>tekliftopla.com <br><br></p>
 require_once("class.phpmailer.php"); //Require file
 	$mail = new PHPMailer();
 	$mail->AddAddress("gulec59-g@yahoo.com","ASG");
-   	$mail->Subject 	= $konu;
+  $mail->Subject 	= $konu;
 	$mail->Body		= $html;
 	$mail->IsSMTP();
 	$mail->SMTPAuth = true;
@@ -182,9 +184,10 @@ require_once("class.phpmailer.php"); //Require file
 	$mail->Password = $infopass; //Þifre
 	//$mail->Port = 587;
 	$mail->IsHTML(true);
+  $mail->Encoding = "base64";
 	$mail->CharSet = "UTF-8";
 	$mail->From 	= "info@tekliftopla.com";
-	$mail->Fromname = "tekliftopla";
+	$mail->FromName = "tekliftopla";
 	$mail->Send();
 
 

@@ -70,7 +70,7 @@ mysqli_set_charset($connection,"utf8");
 
 	mysqli_query($connection,"update rekkayit set sayac=sayac+1 where rekid=$rekid");
 
-	$reklam_link_code=urlencode(base64_encode($rekid));
+	$reklam_link_code=urlencode($rekid);
 
 	
 

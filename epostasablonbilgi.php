@@ -25,7 +25,6 @@
 	   $iletisim = $iletisim ?? '';
 	   $adres = $adres ?? '';
 	   $syetkili = $syetkili ?? '';
-	   $smail = $smail ?? '';
 	   $teklifid = $teklifid ?? '';
 	   $tummail = $tummail ?? array();
 	   $varsayilan_reklam = array('grafik' => '', 'link' => '');
@@ -35,7 +34,7 @@
 	           $varsayilan_reklam = array('grafik' => '', 'link' => '');
 	       }
 	   }
-		echo '<a href="'.$varsayilan_reklam['link'].'"><img src="http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" /></a>';
+    echo '<a href="'.htmlspecialchars($varsayilan_reklam['link'], ENT_QUOTES, 'UTF-8').'" ><img src="http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" /></a>';
 	   ?>
        </td>
   </tr>

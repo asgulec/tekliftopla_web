@@ -84,7 +84,8 @@ for($i=0;$i<$n;$i++) {
 
 	    //$mail->Port = 587;
 
-	    $mail->IsHTML(true);
+		$mail->IsHTML(true);
+		$mail->Encoding = "base64";
 
 	    $mail->CharSet = "UTF-8";
 

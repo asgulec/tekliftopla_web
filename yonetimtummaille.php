@@ -16,6 +16,7 @@ window.location = "tradmin.php";
 <?
 }
 $verified_kulid = $_SESSION["verified_kulid"];
+$tummail = array();
 
 $q="select firmaid, email, rekid, grafik, link from gecrek6 where kullanimid=$verified_kulid";
 $r=mysqli_query($coni,$q);
@@ -76,9 +77,7 @@ if($n>0){
 		$reklam_link=$firmabilgi['link'];
 		$reklam_grafik=$firmabilgi['grafik'];
 		//$cik='?kime='.$firmabilgi['email'].'&id='.$firmabilgi['firmaid'];														         //$cik='?c='.urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256,md5("tekliftopla"),$firmabilgi['firmaid'],MCRYPT_MODE_ECB))); 
-	$cik='?c='.urlencode(base64_encode($firmabilgi['firmaid']));
-	$cikex='?cex='.urlencode(base64_encode($firmabilgi['firmaid']));  
-		
+
 		mysqli_query($coni,"INSERT INTO kulfirmaid (kullanimid,firmaid,rekid) values('$verified_kulid','".$firmabilgi["firmaid"]."','".$firmabilgi["rekid"]."')");
 		
 		$kulfirmaid=mysqli_insert_id($coni);

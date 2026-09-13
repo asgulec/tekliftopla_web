@@ -9,6 +9,23 @@
 </style>
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<?php
+    $reklam_grafik = isset($reklam_grafik) ? $reklam_grafik : '';
+    $sfirma = isset($sfirma) ? $sfirma : '';
+    $tarih2 = isset($tarih2) ? $tarih2 : '';
+    $sure = isset($sure) ? $sure : '';
+    $teslim = isset($teslim) ? $teslim : '';
+    $metin = isset($metin) ? $metin : '';
+    $iletisim = isset($iletisim) ? $iletisim : '';
+    $adres = isset($adres) ? $adres : '';
+    $syetkili = isset($syetkili) ? $syetkili : '';
+    $smail = isset($smail) ? $smail : '';
+    $teklifid = isset($teklifid) ? $teklifid : '';
+    $dil = isset($dil) ? $dil : '';
+    $reklam_link = isset($reklam_link) ? $reklam_link : 'http://www.tekliftopla.com';
+    $cik = isset($cik) ? $cik : '';
+    $cikex = isset($cikex) ? $cikex : '';
+?>
 <style>
 #gallery { height: 100%; width: 400px; position: relative; }
 
@@ -17,7 +34,7 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  botoom: 0px;
+  bottom: 0px;
   left: 0px;
   /* Maintain aspect ratio */
   max-height: 100%;
@@ -32,11 +49,7 @@
   </tr> -->
   <tr> 
     <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176"></a></td>
-<?php
-	//$reklam_link_code=urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256,md5("tekliftopla"),$kulfirmaid,MCRYPT_MODE_ECB))); 
-	$reklam_link_code=urlencode(base64_encode($kulfirmaid));  
-?>
-	   <td bgcolor="#FFFFFF" align="center"><a href="http://www.tekliftopla.com/redirect.php?c=<?php echo $reklam_link_code; ?>"><img src="http://www.tekliftopla.com/reklamlar/<?php echo $reklam_grafik; ?>" width="420px" border="0"></a></td>
+    <td bgcolor="#FFFFFF" align="center"><a href="<?php echo htmlspecialchars($reklam_link, ENT_QUOTES, 'UTF-8'); ?>"><img src="http://www.tekliftopla.com/reklamlar/<?php echo htmlspecialchars($reklam_grafik, ENT_QUOTES, 'UTF-8'); ?>" width="420px" border="0"></a></td>
   </tr>
   <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
   <!-- <tr><td colspan="2" bgcolor="#B5B8C0">&nbsp;</td></tr> -->
@@ -95,9 +108,9 @@ Tek yapmanız gereken e-postalarımızın hepsinin altında bulunan &quot;Mesaj 
         teklif numarasını belirtiniz.<br><br>
         <span style="font-size:9px">(Yukarıda verilen bilgilerin doğruluğuyla ilgili tekliftopla.com hiç bir sorumluluk kabul etmez. Taleplerin gönderilmesini durdurmak veya değiştirmek için www.tekliftopla.com da üyelik kaydınızı değiştirebilirsiniz.<br><br>
         <?php if ($dil=="TUR") { ?>
-        Mesaj listesinden çıkmak için <a href="http://www.tekliftopla.com/kaysilposta.php<?php echo $cik; ?>" >tıklayınız.</a><br>
+        Mesaj listesinden çıkmak için <a href="http://www.tekliftopla.com/kaysilposta.php" >tıklayınız.</a><br>
         <?php } else { ?> 
-        Yurtdışından teklif taleplerini almak istemiyorsanız <a href="http://www.tekliftopla.com/kaysilex.php<?php echo $cikex; ?>" >tıklayınız.</a><br>
+        Yurtdışından teklif taleplerini almak istemiyorsanız <a href="http://www.tekliftopla.com/kaysilex.php" >tıklayınız.</a><br>
         <?php } ?>
         </span><br>
         <a href="http://www.tekliftopla.com">www.tekliftopla.com</a> 

@@ -173,7 +173,7 @@ include "sociallogin-e.php";
 		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
 	}	
 	mysqli_query($connection,"update rekkayit set sayac=sayac+1 where rekid=$rekid");
-	$reklam_link_code=urlencode(base64_encode($rekid));
+	$reklam_link_code=urlencode($rekid);
 	$ext=explode(".",$grafik);
 	$ext=$ext[count($ext)-1];
 	if($ext=="swf") {

@@ -64,7 +64,7 @@ aracısız ilan etmeyi düşünüyorsunuz.</span> </p>
 
 <p align="left"><span class="govde">Tek
 
-yapmanız gereken kendi mal veya hizmet alımlarınız için 30.06.2022
+yapmanız gereken kendi mal veya hizmet alımlarınız için 31.12.2026
 
 tarihine kadar tekliftopla vasıtasıyla 3 teklif toplamak. </span></p>
 
@@ -84,9 +84,9 @@ koşulları;</span></p>
 
 <li>
 
-<div align="left"> <span class="govde">01.07.2021
+<div align="left"> <span class="govde">01.10.2026
 
-- 30.06.2022 tarihleri arasında 3 veya daha fazla teklif talebini
+- 31.12.2026 tarihleri arasında 3 veya daha fazla teklif talebini
 
 sitemiz kullanım koşullarına uygun olarak gerçekleştiren ilk 100
 

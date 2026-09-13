@@ -122,9 +122,7 @@ $konu= "Teklif talebi";
 		$reklam_grafik=$firmabilgi['grafik'];
 
 //$cik='?c='.urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256,md5("tekliftopla"),$firmabilgi['firmaid'],MCRYPT_MODE_ECB))); 
-	    $cik='?c='.urlencode(base64_encode($firmabilgi['firmaid']));
-		$cikex='?cex='.urlencode(base64_encode($firmabilgi['firmaid']));  
-		
+
 		mysqli_query($coni,"INSERT INTO kulfirmaid (kullanimid,firmaid,rekid) values('$verified_kulid','".$firmabilgi["firmaid"]."','".$firmabilgi["rekid"]."')");
 		$kulfirmaid=mysqli_insert_id($coni);        
 		ob_start();

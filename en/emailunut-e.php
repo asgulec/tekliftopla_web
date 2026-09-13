@@ -35,8 +35,8 @@ $html = '
 <table width="600" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="#F9F9F9">
   <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "../image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
   <tr> 
-    <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com/en/index-e.php"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
-	   <td bgcolor="#FFFFFF" align="center"><a href="'.$varsayilan_reklam['link'].'"><img src= "http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" ></a></td>
+    <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
+    <td bgcolor="#FFFFFF" align="center"><a href="'.$varsayilan_reklam['link'].'"><img src= "http://www.tekliftopla.com/reklamlar/'.$varsayilan_reklam['grafik'].'" border="0" width="385" height="60" ></a></td>
   </tr>
   <tr><td colspan="2"  bgcolor="#B5B8C0" height="8px" style="font-size:8px; line-height:8px;"><img src= "../image/trans.gif" style="display: block;" alt="" width="1" height="1"></td></tr>
   <tr> 
@@ -87,7 +87,8 @@ require_once("../class.phpmailer.php"); //Require file
 	$mail->SMTPAuth = true;
 	$mail->Username = "info@tekliftopla.com"; //Kullanýcý Adý
 	$mail->Password = $infopass; //Þifre
-	$mail->IsHTML(true);
+  $mail->IsHTML(true);
+  $mail->Encoding = "base64";
 	$mail->CharSet = "UTF-8";
 	$mail->From 	= "info@tekliftopla.com";
 	$mail->Fromname = "tekliftopla";

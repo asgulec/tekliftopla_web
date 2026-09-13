@@ -16,8 +16,14 @@ mysql_select_db($db);
 mysql_query($query);*/
 
 //$kulfirmaid=intval(trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256,md5("artusa"),base64_decode(urldecode($_GET['c'])),MCRYPT_MODE_ECB)));
-$rekid=intval(trim(base64_decode(urldecode($_GET['d']))));
-if($rekid>0)
+$rekid_raw = isset($_GET['d']) ? trim(urldecode($_GET['d'])) : '';
+$rekid = intval($rekid_raw);
+if ($rekid <= 0 && $rekid_raw !== '') {
+    $decoded = base64_decode($rekid_raw, true);
+    if ($decoded !== false) {
+        $rekid = intval(trim($decoded));
+    }
+}
 mysqli_query($coni,"update rekkayit set tiksayac=tiksayac+1 where rekid=$rekid");
 
 $r=mysqli_query($coni,"select link from rekkayit where rekid=$rekid");
