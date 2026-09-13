@@ -49,11 +49,20 @@ function mysqli_result($res,$row=0,$col=0){
         <td bgcolor="#F6F6F6">
             <TABLE width="95%"  border="0" align="center" cellpadding="2" cellspacing="0"  bordercolor="#F6F6F6"  bgcolor="#EAEAEA">
             
-	    <?
-$emfirma=trim($_POST["efirma"]);
-$strss="SELECT * FROM bilgi where email like '%$emfirma%'";
-$resultss=mysqli_query($coni,$strss);
-$occur=mysqli_num_rows($resultss);
+	    <?php
+$emfirma = isset($_POST["efirma"]) ? trim($_POST["efirma"]) : '';
+$likeEmfirma = '%' . $emfirma . '%';
+
+$stmt = mysqli_prepare($coni, "SELECT * FROM bilgi WHERE email LIKE ?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, 's', $likeEmfirma);
+    mysqli_stmt_execute($stmt);
+    $resultss = mysqli_stmt_get_result($stmt);
+} else {
+    $resultss = false;
+}
+
+$occur = $resultss ? mysqli_num_rows($resultss) : 0;
 if($occur){
 while ($rowss = mysqli_fetch_array($resultss)) {
 $verfirmaid=$rowss['firmaid'];
@@ -71,8 +80,7 @@ $verfirmaid=$rowss['firmaid'];
               </TR>
               <TR align="left">
                 <td align="right" class="govde">Şifre:</td>
-                <td class="govde"><? echo $rowss['sifre'];?>
-                </td>
+                <td class="govde">Gizlenmiş</td>
               </TR>
               <TR align="left">
                 <td align="right" class="govde">Şehir - Ülke:</td>
@@ -91,11 +99,20 @@ $verfirmaid=$rowss['firmaid'];
               </TR>
               <TR align="left">
                 <td align="right" class="govde">Kaydeden:</td>
-                <td class="govde"><? $numara = $rowss['kaydeden'];
-				$kaydeden =  mysqli_query($coni,"SELECT username FROM yonetim WHERE yonid ='$numara' LIMIT 1");
-				$kaydeden = mysqli_result($kaydeden);
-                 echo $kaydeden;
-				 ?>
+                <td class="govde"><?php
+				$numara = isset($rowss['kaydeden']) ? (int)$rowss['kaydeden'] : 0;
+				$stmt_kaydeden = mysqli_prepare($coni, "SELECT username FROM yonetim WHERE yonid = ? LIMIT 1");
+				if ($stmt_kaydeden) {
+				    mysqli_stmt_bind_param($stmt_kaydeden, 'i', $numara);
+				    mysqli_stmt_execute($stmt_kaydeden);
+				    $result_kaydeden = mysqli_stmt_get_result($stmt_kaydeden);
+				    $row_kaydeden = mysqli_fetch_assoc($result_kaydeden);
+				    echo htmlspecialchars($row_kaydeden['username'] ?? '', ENT_QUOTES, 'UTF-8');
+				    mysqli_stmt_close($stmt_kaydeden);
+				} else {
+				    echo '';
+				}
+				?>
                 </td>
               </TR>
               <TR>
@@ -104,24 +121,30 @@ $verfirmaid=$rowss['firmaid'];
                 <tr>
                 <td colspan="2" class="govde">
                 <table width="450" border="0" align="center">
-                <?
+                <?php
 				$count=1;
 				$column=1;
-$str13322="SELECT distinct sektorler.sektor FROM firma_sektor left join sektorler on firma_sektor.sektorid=sektorler.sektorid where firma_sektor.firmaid='$verfirmaid' order by sektorler.sektor";
-$result13322=mysqli_query($coni,$str13322);
-while ($row13322 = mysqli_fetch_array($result13322))
-{
-if ($column==1)
-{
-printf("<tr><td>%s</td>",$row13322['sektor']);
-}
-else{
-printf("<td>%s</td></tr>",$row13322['sektor']);
-}
-$count+=1;
-$column = $count%2;
-}
-?>
+				$stmt_sector = mysqli_prepare($coni, "SELECT DISTINCT sektorler.sektor FROM firma_sektor LEFT JOIN sektorler ON firma_sektor.sektorid = sektorler.sektorid WHERE firma_sektor.firmaid = ? ORDER BY sektorler.sektor");
+				if ($stmt_sector) {
+				    mysqli_stmt_bind_param($stmt_sector, 'i', $verfirmaid);
+				    mysqli_stmt_execute($stmt_sector);
+				    $result13322 = mysqli_stmt_get_result($stmt_sector);
+				} else {
+				    $result13322 = false;
+				}
+				while ($result13322 && $row13322 = mysqli_fetch_array($result13322))
+				{
+				if ($column==1)
+				{
+				printf("<tr><td>%s</td>", htmlspecialchars($row13322['sektor'], ENT_QUOTES, 'UTF-8'));
+				}
+				else{
+				printf("<td>%s</td></tr>", htmlspecialchars($row13322['sektor'], ENT_QUOTES, 'UTF-8'));
+				}
+				$count+=1;
+				$column = $count%2;
+				}
+				?>
 				</table>
                 </td>
               </TR>
@@ -130,24 +153,30 @@ $column = $count%2;
                </TR>
                 <td colspan="2" class="govde">
                 <table width="450" border="0" align="center">
-                <?
+                <?php
 				$count=1;
 				$column=1;
-$strp2111="SELECT distinct sehir.sehir FROM  firma_sehir,sehir where firma_sehir.sehirid=sehir.sehirid and firma_sehir.firmaid='$verfirmaid'  order by sehir.sehir";
-$resultp2111=mysqli_query($coni,$strp2111);
-while ($rowp2111 = mysqli_fetch_array($resultp2111))
-{
-if ($column==1)
-{
-printf("<tr><td>%s</td>",$rowp2111['sehir']);
-}
-else{
-printf("<td>%s</td></tr>",$rowp2111['sehir']);
-}
-$count+=1;
-$column = $count%2;
-}
-  ?>
+				$stmt_city = mysqli_prepare($coni, "SELECT DISTINCT sehir.sehir FROM firma_sehir JOIN sehir ON firma_sehir.sehirid = sehir.sehirid WHERE firma_sehir.firmaid = ? ORDER BY sehir.sehir");
+				if ($stmt_city) {
+				    mysqli_stmt_bind_param($stmt_city, 'i', $verfirmaid);
+				    mysqli_stmt_execute($stmt_city);
+				    $resultp2111 = mysqli_stmt_get_result($stmt_city);
+				} else {
+				    $resultp2111 = false;
+				}
+				while ($resultp2111 && $rowp2111 = mysqli_fetch_array($resultp2111))
+				{
+				if ($column==1)
+				{
+				printf("<tr><td>%s</td>", htmlspecialchars($rowp2111['sehir'], ENT_QUOTES, 'UTF-8'));
+				}
+				else{
+				printf("<td>%s</td></tr>", htmlspecialchars($rowp2111['sehir'], ENT_QUOTES, 'UTF-8'));
+				}
+				$count+=1;
+				$column = $count%2;
+				}
+				?>
   				</table>
                 </td>
               </TR>  <? }}else{?>

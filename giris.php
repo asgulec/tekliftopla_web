@@ -33,11 +33,25 @@
 	     <? $verified_firma = isset($_SESSION['verified_firma']) ? $_SESSION['verified_firma'] : ''; $verified_firmaid = isset($_SESSION['verified_firmaid']) ? $_SESSION['verified_firmaid'] : ''; ?>
         <td bgcolor="#F6F6F6" colspan="4" align="left" class="Baslik" valign="middle"><? echo $verified_firma;?> kullanıcı menüsü</td>
       </tr>
-            <?php $kultip = "select tekliftopla from bilgi where firmaid='$verified_firmaid'";
-			   $restip=mysqli_query($connection,$kultip);
-			   $kulyon = mysqli_fetch_array($restip);
-			   $tip=$kulyon['tekliftopla'];
-			 ?>  
+            <?php
+            $verified_firmaid = isset($_SESSION['verified_firmaid']) ? filter_var($_SESSION['verified_firmaid'], FILTER_VALIDATE_INT) : false;
+
+            if ($verified_firmaid === false || $verified_firmaid <= 0) {
+                $tip = 0;
+            } else {
+                $stmt = mysqli_prepare($connection, "SELECT tekliftopla FROM bilgi WHERE firmaid = ?");
+                if ($stmt) {
+                    mysqli_stmt_bind_param($stmt, 'i', $verified_firmaid);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    $kulyon = mysqli_fetch_assoc($result);
+                    $tip = $kulyon['tekliftopla'] ?? 0;
+                    mysqli_stmt_close($stmt);
+                } else {
+                    $tip = 0;
+                }
+            }
+            ?>
             <tr>
             <td colspan="4">
               <TABLE width="90%"  border="0" align="center" padding="2" cellspacing="8"  >
