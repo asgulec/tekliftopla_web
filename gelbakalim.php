@@ -20,6 +20,10 @@ if( isset($_GET["vemail"]) && isset($_GET["key"]) ){  //checks ifthe tag post is
    		//{
    		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
    		//} 
+		if (!$coni) {
+			echo "{'suncces':'2','massege':'Data Not Save, Try Again'}";
+			exit;
+		}
 		mysqli_set_charset($coni,"utf8");
 		$key=$_GET["key"];
 		if($key==$SQLKEY){          ///validate the SQL key
@@ -33,9 +37,13 @@ if( isset($_GET["vemail"]) && isset($_GET["key"]) ){  //checks ifthe tag post is
 	      $xsr=$_GET["dsure"];
               $xm=$_GET["dtext"];
               //$coni = mysqli_connect($DB_ADDRESS,$DB_USER,$DB_PASS,$DB_NAME);  //connect to the MYSQL database
-              if($coni){
-               	      $ekle="INSERT INTO andkullan (akdate, akeposta, akisim, akulke, aksehir, aktarih, aksure, akmetin) VALUES ('$xd', '$xe', '$xi', '$xc', '$xs', '$xt', '$xsr', '$xm')";
-                      $sonuc=mysqli_query($coni,$ekle);     //runs the posted query (NO PROTECTION FROM INJECTION HERE)
+			  if($coni){
+				      $ekle = "INSERT INTO andkullan (akdate, akeposta, akisim, akulke, aksehir, aktarih, aksure, akmetin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				      $stmt = mysqli_prepare($coni, $ekle);
+				      $sonuc = $stmt && mysqli_stmt_bind_param($stmt, "ssssssss", $xd, $xe, $xi, $xc, $xs, $xt, $xsr, $xm) && mysqli_stmt_execute($stmt);
+				      if ($stmt) {
+					      mysqli_stmt_close($stmt);
+				      }
                       $subject = "tekliftopla test message ...";
                       $message = $xe."\n \n".$xi."\n \n".$xc."\n \n".$xs."\n \n".$xt."\n \n".$xsr."\n \n".$xm;
                       require_once("class.phpmailer.php"); //Require file

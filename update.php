@@ -16,7 +16,7 @@ window.location = "index.php";
 </script> 
 <?
 }
-$verified_firmaid = isset($_SESSION["verified_firmaid"])?$_SESSION["verified_firmaid"]:'';
+$verified_firmaid = isset($_SESSION["verified_firmaid"])?(int)$_SESSION["verified_firmaid"]:0;
 $islem = $_GET["islem"];
 switch($islem)
 {
@@ -66,9 +66,10 @@ if (isset($_POST["sektor"]))
 {
  $sektor = $_POST["sektor"];
  if($sektor){
- 	foreach($sektor as $sektorler)
+		foreach($sektor as $sektorler)
  	{
-		$temp2="INSERT INTO gecici (firmaid,sektorid) values('$verified_firmaid','$sektorler')";
+			$sektorler = (int)$sektorler;
+			$temp2="INSERT INTO gecici (firmaid,sektorid) values('$verified_firmaid','$sektorler')";
 		$etki2=mysqli_query($connection,$temp2);
  	}
  }
@@ -85,6 +86,7 @@ if (isset($_POST["sektor"]))
  {
 	foreach($sektor as $sektorler)
 	{
+		$sektorler = (int)$sektorler;
 		$temp5="delete from gecici where sektorid='$sektorler' and firmaid='$verified_firmaid'";
 		$etki5=mysqli_query($connection,$temp5);
 	}
@@ -104,7 +106,8 @@ if (isset($_POST["sehir"]))
  $etkinp263=mysqli_query($connection,$tempppx263);
  $sehir = $_POST["sehir"];
  if(count($sehir)<50){
-  foreach($sehir as $sehirler){
+	foreach($sehir as $sehirler){
+	$sehirler = (int)$sehirler;
 	$str2="insert into firma_sehir (firmaid,sehirid)values('$verified_firmaid','$sehirler')";
 	$result2=mysqli_query($connection,$str2);
      }}

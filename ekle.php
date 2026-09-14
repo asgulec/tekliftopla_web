@@ -10,7 +10,7 @@ mysqli_set_charset($connection,"utf8");
 $query="SET NAMES 'UTF8'";
 mysql_query($query);
 */
-$verified_firmaid= isset($_SESSION["verified_firmaid"]) ? $_SESSION["verified_firmaid"] : '';
+$verified_firmaid= isset($_SESSION["verified_firmaid"]) ? (int)$_SESSION["verified_firmaid"] : 0;
 // $verified_firmaid = $_SESSION["verified_firmaid"];
 $asama=$_GET["asama"];
 $gkaynak=isset($_GET["gkaynak"]) ? $_GET["gkaynak"] : '';
@@ -119,6 +119,7 @@ if (isset($_POST["sektor"]))
  $sektor = $_POST["sektor"];
  if($sektor){
  foreach($sektor as $sektorler){
+	$sektorler = (int)$sektorler;
   $temp2="INSERT INTO gecici1 (firmaid,sektorid) values('$verified_firmaid','$sektorler')";
   $etki2=mysqli_query($connection,$temp2);
  }}
@@ -134,6 +135,7 @@ if (isset($_POST["sektor"]))
 $sektor = $_POST["sektor"];
 if($sektor){
 foreach($sektor as $sektorler){
+    $sektorler = (int)$sektorler;
 $temp5="delete from gecici1 where sektorid='$sektorler' and firmaid='$verified_firmaid'";
 $etki5=mysqli_query($connection,$temp5);}
 }
@@ -150,6 +152,7 @@ if (isset($_POST["sehir"]))
  $sehir = $_POST["sehir"];
  if(count($sehir)<50){
   foreach($sehir as $sehirler){
+    $sehirler = (int)$sehirler;
 	$str2="insert into firma_sehir (firmaid,sehirid)values('$verified_firmaid','$sehirler')";
 	$result2=mysqli_query($connection,$str2);
      }}

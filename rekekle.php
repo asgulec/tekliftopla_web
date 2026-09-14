@@ -43,6 +43,7 @@ if (isset($_POST["sektor"]))
  $sektor = $_POST["sektor"];
  if($sektor){
  foreach($sektor as $sektorler){
+	$sektorler = (int)$sektorler;
   $temp2="INSERT INTO gecrek1 (rekid,sektorid) values('$rekid','$sektorler')";
   $etki2=mysqli_query($coni,$temp2);
  }}
@@ -60,6 +61,7 @@ if (isset($_POST["sektor"]))
 $sektor = $_POST["sektor"];
 if($sektor){
 foreach($sektor as $sektorler){
+  $sektorler = (int)$sektorler;
 $temp5="delete from gecrek1 where sektorid='$sektorler' and rekid='$rekid'";
 $etki5=mysqli_query($coni,$temp5);}
 }
@@ -78,6 +80,7 @@ if (isset($_POST["sehir"]))
  $sehir = $_POST["sehir"];
  if($sehir){
   foreach($sehir as $sehirler){
+  $sehirler = (int)$sehirler;
 	$str2="insert into reklam_sehir (rekid,sehirid)values('$rekid','$sehirler')";
 	$result2=mysqli_query($coni,"$str2");
   }}
