@@ -7,12 +7,9 @@ if (!$connection) {
 }
 mysqli_set_charset($connection,"utf8");
 
-if(!isset($_SESSION["verified_firmaid"]) and !isset($_SESSION["verified_sifrem"])){
-?>
-<script type='text/javascript'>alert("Hata");
-window.location = "index.php";
-</script>
-<?php } 
-	else
-		$verified_firmaid = $_SESSION["verified_firmaid"];
+if(!isset($_SESSION["verified_firmaid"]) || !isset($_SESSION["verified_sifrem"])){
+	header("Location: index.php");
+	exit;
+}
+$verified_firmaid = $_SESSION["verified_firmaid"];
 ?>

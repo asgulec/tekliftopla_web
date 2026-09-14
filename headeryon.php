@@ -9,8 +9,8 @@ if (!$coni) {
 
 mysqli_set_charset($coni, "utf8");
 
-if (!isset($_SESSION["verified_pass"]) && !isset($_SESSION["verified_user"])) {
-    echo "<script type='text/javascript'>alert('Hata'); window.location = 'index.php';</script>";
+if (!isset($_SESSION["verified_pass"]) || !isset($_SESSION["verified_user"])) {
+    header("Location: index.php");
     exit;
 }
 
