@@ -9,18 +9,34 @@ mysqli_set_charset($connection,"utf8");
 $query="SET NAMES 'UTF8'";
 mysql_query($query);
 mysql_select_db($db);*/
-$semail =mysqli_real_escape_string($connection,isset($_POST["semail"]) ? $_POST["semail"] : '');
-$semail= trim($semail);
-$st="select * from bilgi where email='$semail'";
-$last=mysqli_query($connection,$st);
-/** if (mysql_result($last,0)>0) {  **/
-$no=mysqli_num_rows($last);
+$semail = isset($_POST["semail"]) ? trim($_POST["semail"]) : '';
+if ($semail === '') {
+    header("Location:forgetpass.php?sonuc=epostayok");
+    exit;
+}
+
+$stmt = mysqli_prepare($connection, "SELECT email, sifre, Firma_Adi FROM bilgi WHERE email = ?");
+$no = 0;
+$kime = '';
+$sifreniz = '';
+$frm = '';
+
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "s", $semail);
+    mysqli_stmt_execute($stmt);
+    $last = mysqli_stmt_get_result($stmt);
+    if ($last) {
+        $no = mysqli_num_rows($last);
+        if ($raw = mysqli_fetch_array($last)) {
+            $kime = $raw['email'];
+            $sifreniz = $raw['sifre'];
+            $frm = $raw['Firma_Adi'];
+        }
+    }
+    mysqli_stmt_close($stmt);
+}
+
 if($no>0){
-while ($raw = mysqli_fetch_array($last)){
-                     $kime=$raw['email'];
-					 $sifreniz=$raw['sifre'];
-     	             $frm=$raw['Firma_Adi'];
-					 	   			 }
 error_reporting(63);
 
 $konu="tekliftopla.com kullanıcı bilgileriniz";

@@ -1,43 +1,54 @@
-<?php include "headeri.php";
-/*include"ayar.php";
-$connection=mysql_connect("$host","$user","$password") or die ("Could not connect to the MySQL Server");
-$query="SET NAMES 'UTF8'";
-mysql_query($query);
-*/if(!isset($_SESSION["verified_firmaid"])  and !isset($_SESSION["verified_sifrem"])){
+<?php
+include "headeri.php";
+
+if (!isset($_SESSION["verified_firmaid"]) || !isset($_SESSION["verified_sifrem"])) {
 ?>
 <script type='text/javascript'>alert("Hata");</script>
-<?
-}
-else
-{
-$verified_firmaid = $_SESSION["verified_firmaid"];
-$tur = $_POST["tur"];
-switch($tur) 
-{
-// kullanymdan gelen bilgiyi ekleme;
-case'f';
-	$fax_alankodu = mysqli_real_escape_string($connection,$_POST["fax_alankodu"]);
-	$Fax = mysqli_real_escape_string($connection,$_POST["Fax"]);
-	$ekle1="Update bilgi Set fax_alankodi ='$fax_alankodu', Fax='$Fax' Where firmaid ='$verified_firmaid' ";
-	$sonuc1=mysqli_query($connection,$ekle1);
-	header("location:kullanimgor.php");
-break;
-case't';
-	$tel_alankodu = mysqli_real_escape_string($connection,$_POST["tel_alankodu"]);
-	$Telefon = mysqli_real_escape_string($connection,$_POST["Telefon"]);
-	$ekle1="Update bilgi Set tel_alankodi ='$tel_alankodu', Telefon='$Telefon' Where firmaid ='$verified_firmaid' ";
-	$sonuc1=mysqli_query($connection,$ekle1);
-	header("location:kullanimgor.php");
-break;
-case'p';
-	$Adres	= $_POST["Adres"];
-	$ekle1="Update bilgi Set Adres ='$Adres' Where firmaid ='$verified_firmaid' ";
-	$sonuc1=mysqli_query($connection,$ekle1);
-	header("location:kullanimgor.php");
-break;
-default:
-header("location:kullanim.php");
-}
-header("location:kullanim.php"); 
+<?php
+} else {
+    $verified_firmaid = (int)$_SESSION["verified_firmaid"];
+    $tur = isset($_POST["tur"]) ? $_POST["tur"] : '';
+
+    switch ($tur) {
+        // kullanımdan gelen bilgiyi ekleme;
+        case 'f':
+            $fax_alankodu = isset($_POST["fax_alankodu"]) ? trim($_POST["fax_alankodu"]) : '';
+            $Fax = isset($_POST["Fax"]) ? trim($_POST["Fax"]) : '';
+            $stmt = mysqli_prepare($connection, "UPDATE bilgi SET fax_alankodi = ?, Fax = ? WHERE firmaid = ?");
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "ssi", $fax_alankodu, $Fax, $verified_firmaid);
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_close($stmt);
+            }
+            header("location:kullanimgor.php");
+            exit;
+
+        case 't':
+            $tel_alankodu = isset($_POST["tel_alankodu"]) ? trim($_POST["tel_alankodu"]) : '';
+            $Telefon = isset($_POST["Telefon"]) ? trim($_POST["Telefon"]) : '';
+            $stmt = mysqli_prepare($connection, "UPDATE bilgi SET tel_alankodi = ?, Telefon = ? WHERE firmaid = ?");
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "ssi", $tel_alankodu, $Telefon, $verified_firmaid);
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_close($stmt);
+            }
+            header("location:kullanimgor.php");
+            exit;
+
+        case 'p':
+            $Adres = isset($_POST["Adres"]) ? trim($_POST["Adres"]) : '';
+            $stmt = mysqli_prepare($connection, "UPDATE bilgi SET Adres = ? WHERE firmaid = ?");
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "si", $Adres, $verified_firmaid);
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_close($stmt);
+            }
+            header("location:kullanimgor.php");
+            exit;
+
+        default:
+            header("location:kullanim.php");
+            exit;
+    }
 }
 ?>

@@ -22,13 +22,16 @@ $str22="SELECT * FROM  sektor_grup where sektorgrupid!='26'  order by sektorgrup
 $result22=mysqli_query($connection,$str22);
 $strkl="SELECT * FROM  sektor_grup where sektorgrupid='26'";
 $resultkl=mysqli_query($connection,$strkl);
-$kulid=$_SESSION["verified_firmaid"];
+$kulid = isset($_SESSION["verified_firmaid"]) ? (int)$_SESSION["verified_firmaid"] : 0;
 $temp5="SELECT Distinct sektorid FROM gecici WHERE firmaid = $kulid";
 $result5=mysqli_query ($connection,$temp5);
 $rescount=mysqli_num_rows($result5);
 $temp6="SELECT Distinct sektorid FROM firma_sektor WHERE firmaid = $kulid";
 $result6=mysqli_query ($connection,$temp6);
 $mevcut=mysqli_num_rows($result6);
+$temp_yeni="SELECT Distinct sektorid FROM gecici WHERE firmaid = $kulid AND sektorid NOT IN (SELECT sektorid FROM firma_sektor WHERE firmaid = $kulid)";
+$result_yeni=mysqli_query($connection,$temp_yeni);
+$yeni_secilen=mysqli_num_rows($result_yeni);
 ?>
 <div id="sayfa">
 <div id="ust">
@@ -57,10 +60,10 @@ $mevcut=mysqli_num_rows($result6);
       </tr>
       <tr><td height="10px"></td></tr>
       <tr>
-        <td class="Baslik" width="100%" valign="top" bgcolor="#F6F6F6"><? $verified_firma = $_SESSION["verified_firma"]; ?>
+        <td class="Baslik" width="100%" valign="top" bgcolor="#F6F6F6"><? $verified_firma = isset($_SESSION["verified_firma"]) ? $_SESSION["verified_firma"] : ''; ?>
           Sayın <? echo $verified_firma;?>, lütfen iş kollarınızı, ürettiğiniz mal veya hizmetleri, yaptığınız işleri seçiniz.</td></tr>
          <tr><td> 
-          <span class="govde"><br>Kayıtlı iş kolu adedi: <?php echo $mevcut;?>, yeni seçilen adet: <?php echo $rescount; ?>. En fazla 25 adet seçebilirsiniz.<br><br></span>          
+          <span class="govde"><br>Kayıtlı iş kolu adedi: <?php echo $mevcut;?>, yeni seçilen adet: <?php echo $yeni_secilen; ?>. En fazla 25 adet seçebilirsiniz.<br><br></span>          
           <TABLE align="center"  cellPadding="2" cellSpacing="0" width="95%" border="0">
             <FORM action="guncellesil.php" method="post" name="frmSektorGuncelle">
                <tr>               

@@ -122,18 +122,33 @@ header("location:goruntuleme1.php");
 break;
 
 case 'sifredegis':
-$sifre = mysqli_real_escape_string($connection,$_POST["sifre"]);
-$sifre1 = mysqli_real_escape_string($connection,$_POST["sifre1"]);
-$strr1="select * from bilgi where firmaid='$verified_firmaid' and sifre='$sifre'";
-$resultrx1=mysqli_query($connection,$strr1);
-$resultrx11=mysqli_num_rows($resultrx1);
-if($resultrx11){
-$strr="update bilgi set sifre='$sifre1' where firmaid='$verified_firmaid' and sifre='$sifre'";
-$resultrx=mysqli_query($connection,$strr);
-header("location:sifrem.php");
+$sifre = isset($_POST["sifre"]) ? trim($_POST["sifre"]) : '';
+$sifre1 = isset($_POST["sifre1"]) ? trim($_POST["sifre1"]) : '';
+
+$stmt = mysqli_prepare($connection, "SELECT firmaid FROM bilgi WHERE firmaid = ? AND sifre = ?");
+$resultrx11 = 0;
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "is", $verified_firmaid, $sifre);
+    mysqli_stmt_execute($stmt);
+    $resultrx1 = mysqli_stmt_get_result($stmt);
+    if ($resultrx1) {
+        $resultrx11 = mysqli_num_rows($resultrx1);
+    }
+    mysqli_stmt_close($stmt);
 }
-else{
-header("location:hata1.php");
+
+if ($resultrx11 > 0) {
+    $stmt_up = mysqli_prepare($connection, "UPDATE bilgi SET sifre = ? WHERE firmaid = ? AND sifre = ?");
+    if ($stmt_up) {
+        mysqli_stmt_bind_param($stmt_up, "sis", $sifre1, $verified_firmaid, $sifre);
+        mysqli_stmt_execute($stmt_up);
+        mysqli_stmt_close($stmt_up);
+    }
+    header("location:sifrem.php");
+    exit;
+} else {
+    header("location:hata1.php");
+    exit;
 }
 break;
 

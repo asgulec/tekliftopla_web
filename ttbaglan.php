@@ -1,87 +1,122 @@
 <?php
-include"ayar.php";
-$SQLKEY="1qazcde3";
+include "ayar.php";
+$SQLKEY = "1qazcde3";
 header('Cache-Control: no-cache, must-revalidate');
 
-// error_log(print_r($_POST,TRUE));
+if (isset($_POST["xe"]) && isset($_POST["key"])) {
+    $link = mysqli_connect($host, $user, $password, $db);
+    if (!$link) {
+        header("HTTP/1.0 400 Bad Request");
+        exit;
+    }
+    mysqli_set_charset($link, "utf8");
 
-if( isset($_POST["xe"]) && isset($_POST["key"]) ){  //checks ifthe tag post is there and if its been a proper form post
+    $key = urldecode($_POST["key"]);
+    if ($key == $SQLKEY) {
+        $xe = isset($_POST["xe"]) ? trim(urldecode($_POST["xe"])) : '';
+        $xi = isset($_POST["xi"]) ? trim(urldecode($_POST["xi"])) : '';
+        $xs = isset($_POST["xs"]) ? trim(urldecode($_POST["xs"])) : '';
+        $ot = isset($_POST["xt"]) ? trim(urldecode($_POST["xt"])) : '';
+        $xt = date("Y-m-d", strtotime($ot));
+        $xd = date("Y-m-d", time());
+        $xsr = isset($_POST["xsr"]) ? trim(urldecode($_POST["xsr"])) : '';
+        $xm = isset($_POST["xm"]) ? trim(urldecode($_POST["xm"])) : '';
 
-$link = mysqli_connect($host,$user,$password,$db);
-		//if (!$connection) {
-    		//die("Connection failed: " . mysqli_connect_error());
-		//	}
-		mysqli_set_charset($link,"utf8");
-		$key=mysqli_real_escape_string($link,urldecode($_POST["key"]));
-		if($key==$SQLKEY){          ///validate the SQL key
-              $xe=mysqli_real_escape_string($link,urldecode($_POST["xe"]));
-              $xi=mysqli_real_escape_string($link,urldecode($_POST["xi"]));
-              $xs=mysqli_real_escape_string($link,urldecode($_POST["xs"]));
-              $ot=mysqli_real_escape_string($link,urldecode($_POST["xt"]));
-              $xt=date("Y-m-d", strtotime($ot));
-			  $xd=date("Y-m-d", time());
-			  $xsr=mysqli_real_escape_string($link,urldecode($_POST["xsr"]));
-              $xm=mysqli_real_escape_string($link,urldecode($_POST["xm"]));
-              $link = mysqli_connect($host,$user,$password,$db) ;  //connect ot the MYSQL database
-              //mysqli_select_db($db,$link);                        //connect to the right DB
-              if($link){
-               		  /* $ekle="INSERT INTO andkullan (akdate, akeposta, akisim, aksehir, aktarih, aksure, akmetin) VALUES ('$xd', '$xe', '$xi', '$xs', '$xt', '$xsr', '$xm')";
-                      $sonuc=mysql_query("$ekle");*/                  //runs the posted query (NO PROTECTION FROM INJECTION HERE)
-                      $kontrol="SELECT email FROM bilgi WHERE email='$xe' ";
-                      $kontres=mysqli_query($link,$kontrol);
-                      $kadet=mysqli_num_rows($kontres);
-                      if(!$kadet){
-                         $chars = str_shuffle('abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789');
-                         $count = mb_strlen($chars);
-                         $length=6;
-	                     for ($i = 0, $presult = ''; $i < $length; $i++) {
-                           $index = rand(0, $count - 1);
-                           $presult .= mb_substr($chars, $index, 1);
-                           }
-                         $ekle="INSERT INTO bilgi (Tarih, Firma_Adi, Sehir, email, sifre, aktivite, iletisim, lisan, tekliftopla, Tur, kaydeden, proflag) VALUES ('$xd', '$xi', '$xs', '$xe', '$presult', '1', 'E-Posta', 'Evet', '0', 'Kullanıcı', '1', '0')";
-                         $sonuc=mysqli_query($link,$ekle);
-                         }
-                      $resulta = mysqli_query($link,"SELECT firmaid FROM bilgi WHERE email='$xe'");
-                      $rowa = mysqli_fetch_array($resulta);
-                      $firmaid=$rowa[0];
-                      $resultb = mysqli_query($link,"SELECT sehirid FROM sehir WHERE sehir='$xs'");
-                      $rowb = mysqli_fetch_array($resultb);
-                      $sehirid=$rowb[0];
-                      $chars = str_shuffle('abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789');
-                         $count = mb_strlen($chars);
-                         $length=20;
-	                     for ($i = 0, $pses = ''; $i < $length; $i++) {
-                           $index = rand(0, $count - 1);
-                           $pses .= mb_substr($chars, $index, 1);
-                           }
-					  
-					  // $i=date("h:i:s"); 
-					  $ekleb="INSERT INTO kullanim (firmaid, iletisim, tarih, sure, text, session, sehirid, date, time, tamam, readable, aktif, FirmaEPosta, mesajsay) VALUES ('$firmaid', 'E-Posta', '$xt', '$xsr', '$xm', '$pses', '$sehirid', '$xd', '10:00:00', '0', '0', '1', '$xe', '3000')";
-                      $sonucb=mysqli_query($link,$ekleb);
-					  $subject = "Bekleyen teklif talebi var...";
-                     $message = $xi."\n \n".$xs."\n \n".$xm;
-                     require_once("class.phpmailer.php"); //Require file
-	                  $mail = new PHPMailer();
-					      $mail->AddAddress("gulec59-g@yahoo.com","ASG");
-   					   //$mail->AddAddress("gulecme@gmail.com","MAG");
-				         $mail->Subject 	= $subject;
-					      $mail->Body		= $message;
-			            $mail->IsSMTP();
-	                  $mail->SMTPAuth = true;
-	                  $mail->Username = "info@tekliftopla.com"; //Kullanýcý Adý
-	                  $mail->Password = $infopass; //Þifre
-	                  //$mail->Port = 587;
-	                  $mail->IsHTML(false);
-	                  $mail->CharSet = "UTF-8";
-	                  $mail->From 	= "info@tekliftopla.com";
-	                  $mail->Fromname = "tekliftopla";
-	                  $mail->Send();
-					  header("HTTP/1.0 200");
-					  mysqli_close($link);     //close the DB
-               } 
-		      else {header("HTTP/1.0 400 Bad Request");} 
-		}
-        else {header("HTTP/1.0 400 Bad Request");} 
+        // Check if email exists
+        $kadet = 0;
+        $stmt = mysqli_prepare($link, "SELECT email FROM bilgi WHERE email = ?");
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "s", $xe);
+            mysqli_stmt_execute($stmt);
+            $kontres = mysqli_stmt_get_result($stmt);
+            if ($kontres) {
+                $kadet = mysqli_num_rows($kontres);
+            }
+            mysqli_stmt_close($stmt);
+        }
+
+        if (!$kadet) {
+            $chars = str_shuffle('abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789');
+            $count = mb_strlen($chars);
+            $length = 6;
+            $presult = '';
+            for ($i = 0; $i < $length; $i++) {
+                $index = rand(0, $count - 1);
+                $presult .= mb_substr($chars, $index, 1);
+            }
+
+            $stmt_ins = mysqli_prepare($link, "INSERT INTO bilgi (Tarih, Firma_Adi, Sehir, email, sifre, aktivite, iletisim, lisan, tekliftopla, Tur, kaydeden, proflag) VALUES (?, ?, ?, ?, ?, '1', 'E-Posta', 'Evet', '0', 'Kullanıcı', '1', '0')");
+            if ($stmt_ins) {
+                mysqli_stmt_bind_param($stmt_ins, "sssss", $xd, $xi, $xs, $xe, $presult);
+                mysqli_stmt_execute($stmt_ins);
+                mysqli_stmt_close($stmt_ins);
+            }
+        }
+
+        $firmaid = 0;
+        $stmt_f = mysqli_prepare($link, "SELECT firmaid FROM bilgi WHERE email = ?");
+        if ($stmt_f) {
+            mysqli_stmt_bind_param($stmt_f, "s", $xe);
+            mysqli_stmt_execute($stmt_f);
+            $resulta = mysqli_stmt_get_result($stmt_f);
+            if ($resulta && ($rowa = mysqli_fetch_array($resulta))) {
+                $firmaid = (int)$rowa['firmaid'];
+            }
+            mysqli_stmt_close($stmt_f);
+        }
+
+        $sehirid = 0;
+        $stmt_s = mysqli_prepare($link, "SELECT sehirid FROM sehir WHERE sehir = ?");
+        if ($stmt_s) {
+            mysqli_stmt_bind_param($stmt_s, "s", $xs);
+            mysqli_stmt_execute($stmt_s);
+            $resultb = mysqli_stmt_get_result($stmt_s);
+            if ($resultb && ($rowb = mysqli_fetch_array($resultb))) {
+                $sehirid = (int)$rowb['sehirid'];
+            }
+            mysqli_stmt_close($stmt_s);
+        }
+
+        $chars = str_shuffle('abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789');
+        $count = mb_strlen($chars);
+        $length = 20;
+        $pses = '';
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, $count - 1);
+            $pses .= mb_substr($chars, $index, 1);
+        }
+
+        $stmt_k = mysqli_prepare($link, "INSERT INTO kullanim (firmaid, iletisim, tarih, sure, text, session, sehirid, date, time, tamam, readable, aktif, FirmaEPosta, mesajsay) VALUES (?, 'E-Posta', ?, ?, ?, ?, ?, ?, '10:00:00', '0', '0', '1', ?, '3000')");
+        if ($stmt_k) {
+            mysqli_stmt_bind_param($stmt_k, "isssssss", $firmaid, $xt, $xsr, $xm, $pses, $sehirid, $xd, $xe);
+            mysqli_stmt_execute($stmt_k);
+            mysqli_stmt_close($stmt_k);
+        }
+
+        $subject = "Bekleyen teklif talebi var...";
+        $message = $xi . "\n \n" . $xs . "\n \n" . $xm;
+        require_once("class.phpmailer.php");
+        $mail = new PHPMailer();
+        $mail->AddAddress("gulec59-g@yahoo.com", "ASG");
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true;
+        $mail->Username = "info@tekliftopla.com";
+        $mail->Password = $infopass;
+        $mail->IsHTML(false);
+        $mail->CharSet = "UTF-8";
+        $mail->From = "info@tekliftopla.com";
+        $mail->Fromname = "tekliftopla";
+        $mail->Send();
+
+        header("HTTP/1.0 200");
+        mysqli_close($link);
+    } else {
+        mysqli_close($link);
+        header("HTTP/1.0 400 Bad Request");
+    }
+} else {
+    header("HTTP/1.0 400 Bad Request");
 }
-else {header("HTTP/1.0 400 Bad Request");}
 ?>

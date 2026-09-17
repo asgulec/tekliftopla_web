@@ -49,7 +49,7 @@ return true;}
   </p>
 </div>
 <? 	
-	if (! isset($_SESSION["verified_firmaid"]))
+  if (!isset($_SESSION["verified_firmaid"]) || !isset($_SESSION["verified_sifrem"]))
 	{
 ?>
 <style type="text/css">
