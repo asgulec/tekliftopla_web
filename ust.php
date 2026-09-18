@@ -124,9 +124,10 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 
     </div></td>
 
-    <td align="right" valign="middle" width="155" ><a href="/en/index-e.php"><img width="43" border="0" alt="UK-Flag" src="image/britishflag.gif"/></a><br>
+    <td align="right" valign="middle" width="155" ><?php $englishTarget = (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) ? 'en/giris-e.php' : '/en/index-e.php'; ?>
+    <a href="<?php echo $englishTarget; ?>"><img width="43" border="0" alt="UK-Flag" src="image/britishflag.gif"/></a><br>
 
-    <span class="link"><a href="soruoneri.php">SSS</a></span> | <a href="/en/index-e.php" class="link" >English</a></td>
+    <span class="link"><a href="soruoneri.php">SSS</a></span> | <a href="<?php echo $englishTarget; ?>" class="link" >English</a></td>
 
   </tr>
 

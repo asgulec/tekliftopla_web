@@ -65,7 +65,7 @@ echo "<title>" . htmlspecialchars($row['sektorgrup'], ENT_QUOTES, 'UTF-8') . "</
             </table></td>
         </tr>
         <tr>
-          <td valign="top" bgcolor="#F6F6F6"><? $verified_firma = $_SESSION["verified_firma"]; ?>
+          <td valign="top" bgcolor="#F6F6F6"><?php $verified_firma = isset($_SESSION["verified_firma"]) ? $_SESSION["verified_firma"] : ''; ?>
             <span class="title_kucuk"><?php echo htmlspecialchars($verified_firma, ENT_QUOTES, 'UTF-8'); ?>,</span> <span class="title_kucuk"> ürettiği, sattığı mal veya hizmetleri, yaptığı işleri seçiniz.</span>
             <table width="95%"  border="0" align="center" cellpadding="1" cellspacing="0" >
               <form action="yonekle.php?cat2=<? echo $cat ;?>&asama=sektor" method="post" name="frmSektor" id="frmSektor" >
@@ -105,7 +105,7 @@ $strw1="select sektorler.sektor,sektorler.sektorid  from sektor_sektorgrup,sekto
 $resultw1=mysqli_query($coni,$strw1);
 while ($roww1 = mysqli_fetch_array($resultw1)){
                      $deger=$roww1['sektorid']; ?>
-					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
+					 <input type="checkbox" name="sektor[]" value="<?php echo htmlspecialchars((string)$deger, ENT_QUOTES, 'UTF-8'); ?>">
            <?php echo htmlspecialchars($roww1['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
@@ -114,7 +114,7 @@ $strw1="select sektorler.sektor,sektorler.sektorid  from sektor_sektorgrup,sekto
 $resultw1=mysqli_query($coni,$strw1);
 while ($roww1 = mysqli_fetch_array($resultw1)){
                      $deger=$roww1['sektorid']; ?>
-					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
+					 <input type="checkbox" name="sektor[]" value="<?php echo htmlspecialchars((string)$deger, ENT_QUOTES, 'UTF-8'); ?>">
            <?php echo htmlspecialchars($roww1['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
@@ -129,7 +129,7 @@ $strw="select sektorler.sektor,sektorler.sektorid  from sektor_sektorgrup,sektor
 $resultw=mysqli_query($coni,$strw);
 while ($roww = mysqli_fetch_array($resultw)){
                      $deger=$roww['sektorid']; ?>
-					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
+					 <input type="checkbox" name="sektor[]" value="<?php echo htmlspecialchars((string)$deger, ENT_QUOTES, 'UTF-8'); ?>">
            <?php echo htmlspecialchars($roww['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
@@ -139,7 +139,7 @@ $strw="select sektorler.sektor,sektorler.sektorid  from sektor_sektorgrup,sektor
 $resultw=mysqli_query($coni,$strw);
 while ($roww = mysqli_fetch_array($resultw)){
                      $deger=$roww['sektorid']; ?>
-					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
+					 <input type="checkbox" name="sektor[]" value="<?php echo htmlspecialchars((string)$deger, ENT_QUOTES, 'UTF-8'); ?>">
            <?php echo htmlspecialchars($roww['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>

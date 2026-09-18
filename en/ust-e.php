@@ -142,9 +142,10 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 
     </div> --></td>
 
-    <td align="right" valign="middle" width="155" ><a href="../index.php"><img width="43" border="0" alt="Turkish-Flag" src="../image/turkflag.gif"/></a><br>
+    <td align="right" valign="middle" width="155" ><?php $turkishTarget = (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) ? '../giris.php' : '../index.php'; ?>
+    <a href="<?php echo $turkishTarget; ?>"><img width="43" border="0" alt="Turkish-Flag" src="../image/turkflag.gif"/></a><br>
 
-      <span class="link"><a href="soruoneri-e.php">FAQ</a></span> | <a href="../index.php" class="link" >Türkçe</a></td>
+      <span class="link"><a href="soruoneri-e.php">FAQ</a></span> | <a href="<?php echo $turkishTarget; ?>" class="link" >Türkçe</a></td>
 
   </tr>
 

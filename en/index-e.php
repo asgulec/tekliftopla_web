@@ -1,7 +1,14 @@
 <?php 
- session_start(); 
- if (!isset( $_SESSION['redirect'])) //control default lang vs user preferance
-  {$_SESSION['redirect'] = true;}
+session_start();
+
+if (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) {
+    header('Location: giris-e.php');
+    exit;
+}
+
+if (!isset($_SESSION['redirect'])) {
+    $_SESSION['redirect'] = true;
+}
 ?>
 <?php
 require_once "../ip.php";

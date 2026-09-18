@@ -1,14 +1,23 @@
 <?php
-session_start(); //control default lang vs user preferance
-if (!isset( $_SESSION['redirect']))
-  {$lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : '';
-   $_SESSION['redirect'] = true;  
-   if ($lang !== "tr")
-     { header("Location: en/index-e.php"); 
-	 }
-	 else {header("Location: index.php");
-	 }
-   exit();}
+session_start();
+
+if (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) {
+    header('Location: giris.php');
+    exit;
+}
+
+if (!isset($_SESSION['redirect'])) {
+    $_SESSION['redirect'] = true;
+    $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2)) : '';
+    if ($lang !== 'tr' && !isset($_GET['lang'])) {
+        header('Location: en/index-e.php');
+        exit;
+    }
+    if ($lang === 'tr' && !isset($_GET['lang'])) {
+        header('Location: index.php');
+        exit;
+    }
+}
 ?>
 <? include "ip.php";?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

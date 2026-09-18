@@ -42,8 +42,8 @@
             </tr>
           </table></td></tr>
       <tr>
-        <td class="Baslik" width="100%" valign="top" bgcolor="#F6F6F6"><? $verified_firma = isset($_SESSION["verified_firma"]) ? $_SESSION["verified_firma"] : ''; ?>
-          Sayın <?php echo $verified_firma;?>, lütfen teklif vermek istediğiniz iş kollarını seçiniz.</td></tr>
+        <td class="Baslik" width="100%" valign="top" bgcolor="#F6F6F6"><?php $verified_firma = isset($_SESSION["verified_firma"]) ? $_SESSION["verified_firma"] : ''; ?>
+          Sayın <?php echo htmlspecialchars($verified_firma, ENT_QUOTES, 'UTF-8');?>, lütfen teklif vermek istediğiniz iş kollarını seçiniz.</td></tr>
           <tr><td>
           <table align="center"  cellpadding="0" cellspacing="0" width="100%" border="0">
             <form action="update.php?islem=guncelsektor" method="post" name="LoginForm" >
@@ -71,10 +71,10 @@ if($hakan>=1){
 				 {
 				 if ($column==0)
 				{
-				 printf("<tr><td bgcolor=\"#F6F6F6\" class=\"govde\">%s</td>",$row2['sektor']);
+				 printf("<tr><td bgcolor=\"#F6F6F6\" class=\"govde\">%s</td>", htmlspecialchars($row2['sektor'], ENT_QUOTES, 'UTF-8'));
 				}
 				else{
-				printf("<td bgcolor=\"#F6F6F6\" class=\"govde\">%s</td></tr>",$row2['sektor']);
+				printf("<td bgcolor=\"#F6F6F6\" class=\"govde\">%s</td></tr>", htmlspecialchars($row2['sektor'], ENT_QUOTES, 'UTF-8'));
 				
 				}
 				$count+=1;
@@ -139,8 +139,8 @@ $str="select sektorler.sektor,sektorler.sektorid  from sektor_sektorgrup,sektorl
 $result=mysqli_query($connection,$str);
 while ($row = mysqli_fetch_array($result)){
                      $deger=$row['sektorid']; ?>
-                  <input type=checkbox  name=sektor[] value=<? echo $deger; ?> >
-                  <?php echo $row['sektor']; ?>
+                  <input type="checkbox" name="sektor[]" value="<?php echo htmlspecialchars((string)$deger, ENT_QUOTES, 'UTF-8'); ?>" >
+                  <?php echo htmlspecialchars($row['sektor'], ENT_QUOTES, 'UTF-8'); ?>
                   <br>
                   <?php } ?></td>
               </tr>
