@@ -18,8 +18,8 @@ if( isset($_GET["vemail"]) && isset($_GET["key"]) ){  //checks ifthe tag post is
 		$coni = mysqli_connect($DB_ADDRESS,$DB_USER,$DB_PASS,$DB_NAME);
 		//if (mysqli_connect_errno())
    		//{
-   		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
-   		//} 
+		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		//} 
 		if (!$coni) {
 			echo "{'suncces':'2','massege':'Data Not Save, Try Again'}";
 			exit;
@@ -49,7 +49,7 @@ if( isset($_GET["vemail"]) && isset($_GET["key"]) ){  //checks ifthe tag post is
                       require_once("class.phpmailer.php"); //Require file
 	                  $mail = new PHPMailer();
 			  $mail->AddAddress("gulec59-g@yahoo.com","ASG");
-   			  //$mail->AddAddress("maliknadeemasghar03@gmail.com","Nadeem");
+   		  //$mail->AddAddress("maliknadeemasghar03@gmail.com","Nadeem");
 		          $mail->Subject	= $subject;
 			  $mail->Body= $message;
 			  $mail->IsSMTP();
@@ -65,7 +65,7 @@ if( isset($_GET["vemail"]) && isset($_GET["key"]) ){  //checks ifthe tag post is
 
 	                  echo "{'suncces':'1','massege':'successfuly save'}";
 			
-			  
+		  
 			  mysqli_close($coni);     //close the DB
                } 
 		      else {

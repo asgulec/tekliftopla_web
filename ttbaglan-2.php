@@ -125,6 +125,7 @@ if (isset($_POST["vemail"]) && isset($_POST["key"])) {
         $mail->Send();
 
         header("HTTP/1.0 200");
+        echo "{'suncces':'1','massege':'successfuly save'}";
         mysqli_close($link);
     } else {
         mysqli_close($link);
