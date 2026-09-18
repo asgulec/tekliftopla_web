@@ -145,11 +145,13 @@ include "sociallogin-e.php";
         </tr>
         <tr>
           <td style="margin:auto;"><?php
-	     $sqltek = mysqli_query($connection,"SELECT kullanimid from kullanim where kullanim.tarih >=curdate()");
+       $sqltek = mysqli_query($connection,"SELECT kullanimid from kullanim where kullanim.tarih >= curdate() and kullanim.readable = '1'");
 		 $rowtek = mysqli_num_rows($sqltek);
+         if ($rowtek > 0) {
      ?>
             <p align="center" style="font-family: Verdana, Geneva, sans-serif; font-size: x-small; color: #333; font-style: italic; font: Verdana;"><span><br>
               <a>( Active RFP's : <?php echo number_format( $rowtek); ?> ) </a></span></p></td>
+         <?php } ?>
         </tr>
       </table>
     </div>

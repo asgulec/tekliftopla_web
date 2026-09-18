@@ -1,16 +1,22 @@
 <?php
+include __DIR__ . '/../ayar.php';
+
 function postAndkullan() {
 
-        $userName = $_POST["userName"];
-        $email = $_POST["email"];
-        $countryId = $_POST["countryId"];
-        $cityId = $_POST["cityId"];
-        $text=$_POST["text"];
+    $response = new stdClass();
+    $userData = new stdClass();
+
+    $userName = $_POST["userName"] ?? null;
+    $email = $_POST["email"] ?? null;
+    $countryId = $_POST["countryId"] ?? null;
+    $cityId = $_POST["cityId"] ?? null;
+    $text = $_POST["text"] ?? null;
         // Make database connection
-        $con=mysqli_connect("localhost","teklifto_nadeem", "q1w2e3e3!!", "teklifto_ttdeneme");
+    global $host, $user, $password, $db;
+    $con = mysqli_connect($host, $user, $password, $db);
 
 
-        if (is_null($userName) || is_null($email) || is_null($countryId) || is_null($cityId) || is_null($text) || mysqli_connect_errno())
+    if (is_null($userName) || is_null($email) || is_null($countryId) || is_null($cityId) || is_null($text) || !$con)
         { // validate data
              $response->isSuccess = false;
              $response->message = "Missing data";
@@ -19,8 +25,14 @@ function postAndkullan() {
             echo json_encode($response);
         } else {
             // insert data in DB
-            $query = "INSERT INTO andkullan(akeposta, akisim, aksehir, akulke, akmetin) VALUES ($email,'$userName','$cityId','$countryId', '$text');";
-            $result = mysqli_query($con,$query);
+            mysqli_set_charset($con, 'utf8');
+            $statement = mysqli_prepare($con, "INSERT INTO andkullan (akeposta, akisim, aksehir, akulke, akmetin) VALUES (?, ?, ?, ?, ?)");
+            $result = false;
+            if ($statement) {
+                mysqli_stmt_bind_param($statement, 'sssss', $email, $userName, $cityId, $countryId, $text);
+                $result = mysqli_stmt_execute($statement);
+                mysqli_stmt_close($statement);
+            }
             
             if ($result) {
                 // Success

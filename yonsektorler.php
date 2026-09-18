@@ -11,11 +11,15 @@
 
 <body>
 <?php
-$cat = $_GET["cat"];
-$str1="SELECT * FROM sektor_grup where sektorgrupid='$cat'";
+$cat = filter_input(INPUT_GET, "cat", FILTER_VALIDATE_INT);
+if ($cat === false || $cat === null || $cat < 1) {
+  http_response_code(400);
+  exit;
+}
+$str1="SELECT * FROM sektor_grup where sektorgrupid=$cat";
 $result1=mysqli_query($coni,$str1);
 while ($row = mysqli_fetch_array($result1)){
-echo "<title>".$row['sektorgrup']."</title>";
+echo "<title>" . htmlspecialchars($row['sektorgrup'], ENT_QUOTES, 'UTF-8') . "</title>";
 ?>
 	
 <script>function CheckAll()
@@ -62,13 +66,13 @@ echo "<title>".$row['sektorgrup']."</title>";
         </tr>
         <tr>
           <td valign="top" bgcolor="#F6F6F6"><? $verified_firma = $_SESSION["verified_firma"]; ?>
-            <span class="title_kucuk"><?echo $verified_firma;?>,</span> <span class="title_kucuk"> ürettiği, sattığı mal veya hizmetleri, yaptığı işleri seçiniz.</span>
+            <span class="title_kucuk"><?php echo htmlspecialchars($verified_firma, ENT_QUOTES, 'UTF-8'); ?>,</span> <span class="title_kucuk"> ürettiği, sattığı mal veya hizmetleri, yaptığı işleri seçiniz.</span>
             <table width="95%"  border="0" align="center" cellpadding="1" cellspacing="0" >
               <form action="yonekle.php?cat2=<? echo $cat ;?>&asama=sektor" method="post" name="frmSektor" id="frmSektor" >
                 <tr>
                   <td colspan="2" class="Baslik">
                     <center>
-                      <? echo ucfirst($row['sektorgrup']);}?>
+                      <?php echo htmlspecialchars(ucfirst($row['sektorgrup']), ENT_QUOTES, 'UTF-8'); }?>
                     </center>
 			    </td></tr>
                       <tr>
@@ -77,7 +81,7 @@ echo "<title>".$row['sektorgrup']."</title>";
                 </tr>
                       <?
 $verified_firmaid = $_SESSION["verified_firmaid"];
-$queryqq="SELECT distinct sektorler.sektor,sektorler.sektorid FROM  gecici1 left join sektor_sektorgrup on(gecici1.sektorid=sektor_sektorgrup.sektorid and sektor_sektorgrup.sektorgrupid='$cat')left join sektorler on(sektor_sektorgrup.sektorid=sektorler.sektorid) where gecici1.firmaid='$verified_firmaid' order by sektorler.sektor";
+$queryqq="SELECT distinct sektorler.sektor,sektorler.sektorid FROM  gecici1 left join sektor_sektorgrup on(gecici1.sektorid=sektor_sektorgrup.sektorid and sektor_sektorgrup.sektorgrupid=$cat)left join sektorler on(sektor_sektorgrup.sektorid=sektorler.sektorid) where gecici1.firmaid='$verified_firmaid' order by sektorler.sektor";
 $etki=mysqli_query($coni,$queryqq);
 $etkili=mysqli_affected_rows($coni);
 if($etkili){
@@ -85,7 +89,7 @@ if($etkili){
                       <tr>
                         <td class="govde">
                           <? while ($row2 = mysqli_fetch_array($etki)){
-                     echo $row2['sektor'];
+                     echo htmlspecialchars($row2['sektor'], ENT_QUOTES, 'UTF-8');
 					 echo "<br>";}?></td>
                 </tr>
                       <tr>
@@ -102,7 +106,7 @@ $resultw1=mysqli_query($coni,$strw1);
 while ($roww1 = mysqli_fetch_array($resultw1)){
                      $deger=$roww1['sektorid']; ?>
 					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
-					 <? echo $roww1['sektor']; ?>
+           <?php echo htmlspecialchars($roww1['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
                         <td width="49%" valign="top" class="govde" ><?
@@ -111,7 +115,7 @@ $resultw1=mysqli_query($coni,$strw1);
 while ($roww1 = mysqli_fetch_array($resultw1)){
                      $deger=$roww1['sektorid']; ?>
 					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
-					 <? echo $roww1['sektor']; ?>
+           <?php echo htmlspecialchars($roww1['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
                 </tr>
@@ -126,7 +130,7 @@ $resultw=mysqli_query($coni,$strw);
 while ($roww = mysqli_fetch_array($resultw)){
                      $deger=$roww['sektorid']; ?>
 					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
-					 <? echo $roww['sektor']; ?>
+           <?php echo htmlspecialchars($roww['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
                 <td class="govde"><?
@@ -136,7 +140,7 @@ $resultw=mysqli_query($coni,$strw);
 while ($roww = mysqli_fetch_array($resultw)){
                      $deger=$roww['sektorid']; ?>
 					 <input type=checkbox  name=sektor[] value=<? echo $deger ?>>
-					 <? echo $roww['sektor']; ?>
+           <?php echo htmlspecialchars($roww['sektor'], ENT_QUOTES, 'UTF-8'); ?>
 					 <br> <? }
 									            ?></td>
                 </tr>

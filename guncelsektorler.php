@@ -48,7 +48,11 @@
           <table align="center"  cellpadding="0" cellspacing="0" width="100%" border="0">
             <form action="update.php?islem=guncelsektor" method="post" name="LoginForm" >
               <?php
-$cat = $_GET["cat"];
+$cat = filter_input(INPUT_GET, "cat", FILTER_VALIDATE_INT);
+if ($cat === false || $cat === null || $cat < 1) {
+  http_response_code(400);
+  exit;
+}
 $verified_firmaid = isset($_SESSION["verified_firmaid"]) ? $_SESSION["verified_firmaid"] : '';
 $query="SELECT distinct sektorler.sektor,sektorler.sektorid FROM  gecici left join sektor_sektorgrup on(gecici.sektorid=sektor_sektorgrup.sektorid and sektor_sektorgrup.sektorgrupid=$cat)left join sektorler on(sektor_sektorgrup.sektorid=sektorler.sektorid) where gecici.firmaid=$verified_firmaid order by sektorler.sektor";
 $etki=mysqli_query($connection,$query);

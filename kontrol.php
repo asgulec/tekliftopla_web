@@ -6,6 +6,13 @@ if (!$connection) {
 }
 mysqli_set_charset($connection,"utf8");
 
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
 $sifre = isset($_POST["sifre"]) ? trim($_POST["sifre"]) : '';
 $email = isset($_POST["email"]) ? trim($_POST["email"]) : '';
@@ -23,6 +30,7 @@ if ($stmt1) {
 
 if ($etki1) {
     while ($row1 = mysqli_fetch_array($result1)) {
+        session_regenerate_id(true);
         $verified_firmaid = $row1['firmaid'];
         $_SESSION['verified_firmaid'] = $verified_firmaid;
         $verified_email = $row1['email'];
@@ -50,6 +58,7 @@ if ($stmt) {
 
 if ($etki) {
     while ($row = mysqli_fetch_array($result)) {
+        session_regenerate_id(true);
         $verified_email = $row['email'];
         $_SESSION['verified_email'] = $verified_email;
         $verified_sifrem = $row['sifre'];

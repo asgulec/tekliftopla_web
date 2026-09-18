@@ -106,16 +106,16 @@ div#root:hover > iframe {
 
          <? 
 
-	     $sqltek = mysqli_query($connection,"SELECT kullanimid from kullanim where kullanim.tarih >=curdate()");
+       $sqltek = mysqli_query($connection,"SELECT kullanimid from kullanim where kullanim.tarih >= curdate() and kullanim.readable = '1'");
 
 		 $rowtek = mysqli_num_rows($sqltek);
-
-	     if ($rowtek>10) {?>
+      if ($rowtek > 0) {
+    ?>
 
 <p align="center" style="font-family: Verdana, Geneva, sans-serif; font-size: 10px; color: #333; font-style: italic; font: Verdana;"><span> <a title="Kayıtlı olduğunuz iş kollarında teklif toplayanları görmek için üye girişi yapınız.">Teklif bekleyen sayısı:<?php echo number_format( $rowtek); ?></a><a title="Kayıtlı olduğunuz iş kollarında teklif toplayanları görmek için üye girişi yapınız."><br>
 
   (Üye girişi yapınız)</a></span></p>
-         <? } else { ?> <a title=""><br><br><br></a> <? } ?>
+        <?php } ?>
      </td>
 
      </tr>

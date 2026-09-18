@@ -65,9 +65,7 @@ $time=date("H:i:s");
 $date=date("Ymd");
 $text=mysqli_real_escape_string($coni,$_POST["text"]);
 $textshort=mysqli_real_escape_string($coni,$_POST["textshort"]);
-$$text=str_replace("<script","",$text);
-$$text=str_replace("<style","",$text);
-$$text=str_replace("<embed","",$text);
+$text = str_ireplace(array("<script", "<style", "<embed"), "", $text);
 $verified_yonid = $_SESSION["verified_yonid"];
 $ekle1="INSERT INTO kullanim (tarih,sure,iletisim,text,textshort,firmaid,session,sehirid,ulke,date,time,FirmaEPosta,Firmailetisim,Firma,mesajsay,kulip,dil) VALUES ('$tarih','$sure','$iletisim','$text','$textshort','$verified_yonid','$verified_sifre1','$sehir','$ulke','$date','$time','$ePosta','$iletisimBilgi','$firma','$mesajnum','$kulip','$dil')";
 $verified_sehirid=$sehir;
@@ -95,7 +93,7 @@ $etkinp2=mysqli_query($coni,$tempppx2);
 $tempppx3="delete from gecici3 where kullanımid='$verified_kulid' or kullanimid='0'";
 $etkinp3=mysqli_query($coni,$tempppx3);
 
-$tempppx4="delete from gecici4 where kullanimid='$verified_kulid' or kullanimid='0''";
+$tempppx4="delete from gecici4 where kullanimid='$verified_kulid' or kullanimid='0'";
 $etkinp4=mysqli_query($coni,$tempppx4);
 
 $www="delete from gecici5 where kullanimid='$verified_kulid' or kullanimid='0'";
@@ -125,9 +123,7 @@ $_SESSION['verified_sifre1']=$verified_sifre1;
 $time=date("H:i:s");
 $date=date("Ymd");
 $text=mysqli_real_escape_string($coni,$_POST["text"]);
-$$text=str_replace("<script","",$text);
-$$text=str_replace("<style","",$text);
-$$text=str_replace("<embed","",$text);
+$text = str_ireplace(array("<script", "<style", "<embed"), "", $text);
 $verified_yonid = $_SESSION["verified_yonid"];
 $ekle1="INSERT INTO kullanim (tarih,sure,iletisim,text,firmaid,session,sehirid,date,time,FirmaEPosta,Firmailetisim,Firma,mesajsay,aktif,kulip) VALUES ('$tarih','$sure','$iletisim','$text','$verified_yonid','$verified_sifre1','$sehir','$date','$time','$ePosta','$iletisimBilgi','$firma','$mesajnum','1','$kulip')";
 $sonuc1=mysqli_query($coni,$ekle1);
@@ -160,7 +156,7 @@ require_once("class.phpmailer.php"); //Require file
 	$mail->IsHTML(false);
 	$mail->CharSet = "UTF-8";
 	$mail->From 	= "info@tekliftopla.com";
-	$mail->Fromname = "tekliftopla";
+	$mail->FromName = "tekliftopla";
 	$mail->Send();
 
 header("location:yonetimgiris.php");

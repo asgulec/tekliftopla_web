@@ -81,21 +81,21 @@ while ($rowFirma = mysqli_fetch_array($result))
             <TR>
               <td width="50%" align="right" class="govde" id="FKAd">Kullanıcı Adı    :</td>
               <td width="50%" >
-                 <INPUT  maxLength=80 id="Firma_Adi" name="Firma_Adi" size="25" style="border: 1 solid #666666" value="<?echo $rowFirma['Firma_Adi'];?>">
+                 <INPUT  maxLength=80 id="Firma_Adi" name="Firma_Adi" size="25" style="border: 1 solid #666666" value="<?php echo htmlspecialchars($rowFirma['Firma_Adi'], ENT_QUOTES, 'UTF-8');?>">
                 <FONT class="title"><strong>*</strong></FONT></td>
             </TR>
             <TR>
               <td class="govde" align="right" i><label id="ilgili">İlgili Kişi  :</label></td>
-              <td><INPUT name="yetkili" style="border: 1 solid #666666" size=25  maxLength=50 value="<? echo $rowFirma['yetkili'];?>"> 
+              <td><INPUT name="yetkili" style="border: 1 solid #666666" size=25  maxLength=50 value="<?php echo htmlspecialchars($rowFirma['yetkili'], ENT_QUOTES, 'UTF-8');?>"> 
                 <FONT class="not">(Firmalar)</FONT></td>
             </TR>
             <TR>
               <td class="govde" align="right" id="FKAdres">Kullanıcı Adresi    :</td>
-              <td><INPUT name="Adres" style="border: 1 solid #666666" size="25"  value="<?php echo $rowFirma['Adres'];?>"></td>
+              <td><INPUT name="Adres" style="border: 1 solid #666666" size="25"  value="<?php echo htmlspecialchars($rowFirma['Adres'], ENT_QUOTES, 'UTF-8');?>"></td>
             </TR>
             <TR>
               <td class="govde" align="right">Posta Kodu    :</td>
-              <td><INPUT name="Posta_Kodu" style="border: 1 solid #666666" size=5 maxLength=5 value="<?php echo $rowFirma['Posta_Kodu'];?>"> </td>
+              <td><INPUT name="Posta_Kodu" style="border: 1 solid #666666" size=5 maxLength=5 value="<?php echo htmlspecialchars($rowFirma['Posta_Kodu'], ENT_QUOTES, 'UTF-8');?>"> </td>
             </TR>
             <TR>
               <td  class="govde" align="right">Şehir :</td>
@@ -111,7 +111,7 @@ while ($rowFirma = mysqli_fetch_array($result))
 						echo "<option selected>";
 					else
   					    echo "<option>";
-					 echo $row['sehir'];
+           echo htmlspecialchars($row['sehir'], ENT_QUOTES, 'UTF-8');
 					  echo "</option>";
                      echo"<br>";}?>
                   </select>
@@ -130,10 +130,10 @@ while ($rowFirma = mysqli_fetch_array($result))
 						echo "<option selected>";
 					else
   					    echo "<option>";
-					 echo $row['telkod'];
+           echo htmlspecialchars($row['telkod'], ENT_QUOTES, 'UTF-8');
 				                     echo"<br>";}?>
                 </select>
-                <INPUT maxLength=7 name="Telefon" size=7  style="border: 1 solid #666666" value="<?php echo $rowFirma['Telefon'];?>">
+                <INPUT maxLength=7 name="Telefon" size=7  style="border: 1 solid #666666" value="<?php echo htmlspecialchars($rowFirma['Telefon'], ENT_QUOTES, 'UTF-8');?>">
               </strong></td>
             </TR>
             <TR>
@@ -150,10 +150,10 @@ while ($rowFirma = mysqli_fetch_array($result))
 							echo "<option selected>";
 						else
   					    	echo "<option>";
-					 echo $row['telkod'];
+           echo htmlspecialchars($row['telkod'], ENT_QUOTES, 'UTF-8');
 					 echo"<br>";}?>
                 </select>
-                <INPUT  maxLength=7 name="Fax" size=7 style="border: 1 solid #666666" value="<?php echo $rowFirma['Fax'];?>">
+                <INPUT  maxLength=7 name="Fax" size=7 style="border: 1 solid #666666" value="<?php echo htmlspecialchars($rowFirma['Fax'], ENT_QUOTES, 'UTF-8');?>">
               </strong></td>
             </TR>
             <tr>
@@ -179,12 +179,12 @@ while ($rowFirma = mysqli_fetch_array($result))
             </tr>
             <TR>
               <td class="govde" align="right">Web Adresi :</td>
-              <td><INPUT name="Web" style="border: 1 solid #666666"  size=25  maxLength=50 value="<? echo $rowFirma['Web'];?>"></td>
+              <td><INPUT name="Web" style="border: 1 solid #666666"  size=25  maxLength=50 value="<?php echo htmlspecialchars($rowFirma['Web'], ENT_QUOTES, 'UTF-8');?>"></td>
             </TR>
             <TR>
               <td class="govde" align="right">E-Posta Adresi :</td>
-              <td class="govde"><? echo $rowFirma['email'];?>
-                <input type="hidden" maxlength=50 name="email" id="email" size=25 style="border: 1 solid #666666" value="<? echo $rowFirma['email'];?>"></td>
+              <td class="govde"><?php echo htmlspecialchars($rowFirma['email'], ENT_QUOTES, 'UTF-8');?>
+                <input type="hidden" maxlength=50 name="email" id="email" size=25 style="border: 1 solid #666666" value="<?php echo htmlspecialchars($rowFirma['email'], ENT_QUOTES, 'UTF-8');?>"></td>
             </TR>
             
             <tr>

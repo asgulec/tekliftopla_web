@@ -25,7 +25,6 @@ if (!isset($accessToken)) {
     die("Unable to obtain access token.");
 }
 
-// --- VALIDATE TOKEN ---
 $oAuth2Client = $fb->getOAuth2Client();
 $tokenMetadata = $oAuth2Client->debugToken($accessToken);
 
@@ -80,15 +79,25 @@ if (!$connection) {
 mysqli_set_charset($connection, "utf8");
 
 // Check if user exists
-$sql = "SELECT sifre, email, firmaid, Firma_Adi FROM bilgi WHERE email = '$email'";
-$result = mysqli_query($connection, $sql);
+$statement = mysqli_prepare($connection, "SELECT sifre, email, firmaid, Firma_Adi FROM bilgi WHERE LOWER(email) = LOWER(?) LIMIT 1");
+$result = false;
+if ($statement) {
+    mysqli_stmt_bind_param($statement, "s", $email);
+    mysqli_stmt_execute($statement);
+    $result = mysqli_stmt_get_result($statement);
+}
 
-if (mysqli_num_rows($result)) {
+if ($result && mysqli_num_rows($result)) {
 
     // Existing user
     $row = mysqli_fetch_assoc($result);
 
-    mysqli_query($connection, "UPDATE bilgi SET aktivite='1' WHERE email='$email'");
+    $updateStatement = mysqli_prepare($connection, "UPDATE bilgi SET aktivite = '1' WHERE email = ?");
+    if ($updateStatement) {
+        mysqli_stmt_bind_param($updateStatement, "s", $email);
+        mysqli_stmt_execute($updateStatement);
+        mysqli_stmt_close($updateStatement);
+    }
 
     $_SESSION['verified_email']    = $row['email'];
     $_SESSION['verified_sifrem']   = $row['sifre'];

@@ -147,16 +147,24 @@ else // user logged in
     //compare user id in our database
     $user_exist = $mysqli->query("SELECT COUNT(email) as usercount FROM bilgi WHERE email=$email")->fetch_object()->usercount; 
     if($user_exist) */
-	$email = trim($email);
-	$email_safe = mysqli_real_escape_string($connection, $email);
-	$sql1="SELECT sifre,email,firmaid,Firma_Adi FROM bilgi WHERE LOWER(email)=LOWER('$email_safe') LIMIT 1";
-    $result1 = mysqli_query($connection,$sql1) or die ("Couldn't execute SQL query");
+    $email = trim($email);
+    $statement = mysqli_prepare($connection, "SELECT sifre, email, firmaid, Firma_Adi FROM bilgi WHERE LOWER(email) = LOWER(?) LIMIT 1");
+    $result1 = false;
+    if ($statement) {
+        mysqli_stmt_bind_param($statement, "s", $email);
+        mysqli_stmt_execute($statement);
+        $result1 = mysqli_stmt_get_result($statement);
+    }
     $etki1=mysqli_num_rows($result1);
     if($etki1)
     {
         while($row=mysqli_fetch_array($result1)){
-        $str78="update bilgi set aktivite='1' where email='$email'";
-		$result78=mysqli_query($connection,$str78) or die ("Couldn't execute SQL query");
+        $updateStatement = mysqli_prepare($connection, "UPDATE bilgi SET aktivite = '1' WHERE email = ?");
+        if ($updateStatement) {
+            mysqli_stmt_bind_param($updateStatement, "s", $email);
+            mysqli_stmt_execute($updateStatement);
+            mysqli_stmt_close($updateStatement);
+        }
 		$verified_email=$row['email'];
         $_SESSION['verified_email']=$verified_email;
         $verified_sifrem=$row['sifre'];

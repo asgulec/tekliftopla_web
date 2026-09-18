@@ -5,10 +5,17 @@
 mysql_query($query);*/
 	 if ($_POST["Durum"]==2)
 	 {
-		$sorgu =  mysqli_query($coni, "UPDATE sektor_sektorgrup SET " .
-	                      " sektorid =".mysqli_real_escape_string($coni,$_POST["IsKolu"]) . "," .
-	                      " sektorgrupid =".mysqli_real_escape_string($coni,$_POST["SektorGrup"]) .  
-						  " Where id=". mysqli_real_escape_string($coni,$_POST["Id"]) );
+		$sektorId = filter_var($_POST["IsKolu"] ?? null, FILTER_VALIDATE_INT);
+		$sektorGrupId = filter_var($_POST["SektorGrup"] ?? null, FILTER_VALIDATE_INT);
+		$id = filter_var($_POST["Id"] ?? null, FILTER_VALIDATE_INT);
+		if ($sektorId !== false && $sektorGrupId !== false && $id !== false) {
+			$statement = mysqli_prepare($coni, "UPDATE sektor_sektorgrup SET sektorid = ?, sektorgrupid = ? WHERE id = ?");
+			if ($statement) {
+				mysqli_stmt_bind_param($statement, "iii", $sektorId, $sektorGrupId, $id);
+				mysqli_stmt_execute($statement);
+				mysqli_stmt_close($statement);
+			}
+		}
 //		$sorgu =  mysql_db_query($db, "UPDATE sektorler SET " .
 //	                      " sektor ='".$_POST["Adi"] . "'" .
 //						  " Where sektorid=". $_POST["IsKoluId"] );
@@ -23,13 +30,28 @@ mysql_query($query);*/
 //		      or die("Invalid query: ".mysql_error());
 //	   $row=mysql_fetch_array($sorgu);
 
-		$sorgu =  mysqli_query($coni, "Insert Into sektor_sektorgrup(sektorid,sektorgrupid) Values( " .
-	              mysqli_real_escape_string($coni,$_POST["IsKolu"]). ",". 
-				  mysqli_real_escape_string($coni,$_POST["SektorGrup"]) . ")");
+		$sektorId = filter_var($_POST["IsKolu"] ?? null, FILTER_VALIDATE_INT);
+		$sektorGrupId = filter_var($_POST["SektorGrup"] ?? null, FILTER_VALIDATE_INT);
+		if ($sektorId !== false && $sektorGrupId !== false) {
+			$statement = mysqli_prepare($coni, "INSERT INTO sektor_sektorgrup (sektorid, sektorgrupid) VALUES (?, ?)");
+			if ($statement) {
+				mysqli_stmt_bind_param($statement, "ii", $sektorId, $sektorGrupId);
+				mysqli_stmt_execute($statement);
+				mysqli_stmt_close($statement);
+			}
+		}
 	}
 	else    if ($_POST["Durum"] ==3)
 	   		{ 
-		     $sorgu = mysqli_query($coni,"Delete from sektor_sektorgrup where id=".mysqli_real_escape_string($coni,$_POST["Id"]));
+		     $id = filter_var($_POST["Id"] ?? null, FILTER_VALIDATE_INT);
+		     if ($id !== false) {
+				$statement = mysqli_prepare($coni, "DELETE FROM sektor_sektorgrup WHERE id = ?");
+				if ($statement) {
+					mysqli_stmt_bind_param($statement, "i", $id);
+					mysqli_stmt_execute($statement);
+					mysqli_stmt_close($statement);
+				}
+			 }
 //		     $sorgu = mysql_db_query($db,"Delete from sektorler where id=".$_POST["IsKoluId"]);
  			}
 	header("Location:IsKoluListe.php");
