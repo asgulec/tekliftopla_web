@@ -46,7 +46,9 @@ $sehirx = mysqli_real_escape_string($coni,$_POST["sehir"]);
 $iletisimx = mysqli_real_escape_string($coni,$_POST["iletisim"]);
 $ulke= mysqli_real_escape_string($coni,$_POST["ulke"]);
 $sehir= ($ulke =="TUR" ? $sehirx : "999" );
-$dil= ($ulke =="TUR" ? "TUR" : "ENG");
+$dil = isset($_POST["dil"]) && in_array($_POST["dil"], array("TUR", "ENG"), true)
+	? $_POST["dil"]
+	: ($ulke == "TUR" ? "TUR" : "ENG");
 if($dil=="ENG"){
 	$trans = array("Gün" => "Day(s)", "Hafta" => "Week(s)","Ay" => "Month(s)", "Yıl" => "Year(s)");
     $sure = strtr($surex,$trans);

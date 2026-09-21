@@ -1,6 +1,6 @@
 <?
 include"ayar.php";
-session_start();
+tekliftopla_start_session();
 $connection=mysql_connect("$host","$user","$password") or die ("Could not connect to the MySQL Server");
 mysql_select_db($db);
 $coni = mysqli_connect($host,$user,$password,$db) or die("Some error occurred during connection " . mysqli_error($coni));

@@ -21,6 +21,7 @@ if (isset($_POST["xe"]) && isset($_POST["key"])) {
         $xd = date("Y-m-d", time());
         $xsr = isset($_POST["xsr"]) ? trim(urldecode($_POST["xsr"])) : '';
         $xm = isset($_POST["xm"]) ? trim(urldecode($_POST["xm"])) : '';
+        $vlanguage = isset($_POST["vlanguage"]) ? strtolower(trim(urldecode($_POST["vlanguage"]))) : '';
 
         // Check if email exists
         $kadet = 0;
@@ -77,6 +78,8 @@ if (isset($_POST["xe"]) && isset($_POST["key"])) {
             mysqli_stmt_close($stmt_s);
         }
 
+        $xdil = (preg_match('/^en(?:-|$)/', $vlanguage) || in_array($vlanguage, array('eng', 'english'), true)) ? 'ENG' : 'TUR';
+
         $chars = str_shuffle('abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789');
         $count = mb_strlen($chars);
         $length = 20;
@@ -86,9 +89,9 @@ if (isset($_POST["xe"]) && isset($_POST["key"])) {
             $pses .= mb_substr($chars, $index, 1);
         }
 
-        $stmt_k = mysqli_prepare($link, "INSERT INTO kullanim (firmaid, iletisim, tarih, sure, text, session, sehirid, date, time, tamam, readable, aktif, FirmaEPosta, mesajsay) VALUES (?, 'E-Posta', ?, ?, ?, ?, ?, ?, '10:00:00', '0', '0', '1', ?, '3000')");
+        $stmt_k = mysqli_prepare($link, "INSERT INTO kullanim (firmaid, iletisim, tarih, sure, text, session, sehirid, date, time, tamam, readable, aktif, FirmaEPosta, mesajsay, ulke, dil) VALUES (?, 'E-Posta', ?, ?, ?, ?, ?, ?, '10:00:00', '0', '0', '1', ?, '3000', 'TUR', ?)");
         if ($stmt_k) {
-            mysqli_stmt_bind_param($stmt_k, "isssssss", $firmaid, $xt, $xsr, $xm, $pses, $sehirid, $xd, $xe);
+            mysqli_stmt_bind_param($stmt_k, "issssssss", $firmaid, $xt, $xsr, $xm, $pses, $sehirid, $xd, $xe, $xdil);
             mysqli_stmt_execute($stmt_k);
             mysqli_stmt_close($stmt_k);
         }

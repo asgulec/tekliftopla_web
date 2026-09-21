@@ -312,6 +312,16 @@ $result=mysqli_query($coni,$str);
                     </select>
                 </td>
               </TR>
+              <TR>
+                <td align="right" class="govde">Onay E-Postası Dili: </td>
+                <td align="left">
+                  <select name="dil">
+                    <option value="" selected>Otomatik</option>
+                    <option value="TUR">Türkçe</option>
+                    <option value="ENG">English</option>
+                  </select>
+                </td>
+              </TR>
               <tr>
                 <td align="right" class="govde">Mal ve Hizmetin Tarifi :</td>
                 <td class="govde">

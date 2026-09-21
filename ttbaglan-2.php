@@ -22,6 +22,7 @@ if (isset($_POST["vemail"]) && isset($_POST["key"])) {
         $xd = date("Y-m-d", time());
         $xsr = isset($_POST["dsure"]) ? trim(urldecode($_POST["dsure"])) : '';
         $xm = isset($_POST["dtext"]) ? trim(urldecode($_POST["dtext"])) : '';
+        $vlanguage = isset($_POST["vlanguage"]) ? strtolower(trim(urldecode($_POST["vlanguage"]))) : '';
 
         // Get country iso3
         $ulkeiso = '';
@@ -89,7 +90,11 @@ if (isset($_POST["vemail"]) && isset($_POST["key"])) {
         }
 
         $xdil = "TUR";
-        if ($ulkeiso !== 'TUR') {
+        if (preg_match('/^tr(?:-|$)/', $vlanguage) || in_array($vlanguage, array('tur', 'turkish'), true)) {
+            $xdil = "TUR";
+        } elseif (preg_match('/^en(?:-|$)/', $vlanguage) || in_array($vlanguage, array('eng', 'english'), true)) {
+            $xdil = "ENG";
+        } elseif ($ulkeiso !== 'TUR') {
             $xs = "999";
             $xdil = "ENG";
         }

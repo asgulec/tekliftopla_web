@@ -6,14 +6,7 @@ if (!$connection) {
 }
 mysqli_set_charset($connection,"utf8");
 
-session_set_cookie_params([
-    'lifetime' => 0,
-    'path' => '/',
-    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
-    'httponly' => true,
-    'samesite' => 'Lax'
-]);
-session_start();
+tekliftopla_start_session();
 $sifre = isset($_POST["sifre"]) ? trim($_POST["sifre"]) : '';
 $email = isset($_POST["email"]) ? trim($_POST["email"]) : '';
 

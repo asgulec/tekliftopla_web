@@ -1,6 +1,6 @@
 <?php
 include "ayar.php";
-session_start();
+tekliftopla_start_session();
 
 $coni = mysqli_connect($host, $user, $password, $db);
 if (!$coni) {
