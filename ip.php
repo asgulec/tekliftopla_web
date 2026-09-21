@@ -1,5 +1,5 @@
 <?php
-include"ayar.php";
+include_once "ayar.php";
 if (!isset($var))
 if(!isset($sesid)){
 $sesid=md5(microtime());

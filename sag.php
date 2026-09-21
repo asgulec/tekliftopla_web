@@ -146,6 +146,10 @@ div#root:hover > iframe {
 
 		and rektip=2
 
+    and adet > tiksayac
+
+    and adet > 0
+
 		order by kaytarih asc limit 0,1";
 
 	$r=mysqli_query($connection,$q);
@@ -160,7 +164,7 @@ div#root:hover > iframe {
 
 	 else {
 
-		$q="select rekid, grafik, link from rekkayit where rektip=12 order by kaytarih desc limit 0,1";
+    $q="select rekid, grafik, link from rekkayit where rektip=12 and adet > tiksayac and adet > 0 order by kaytarih desc limit 0,1";
 
 		$r=mysqli_query($connection,$q);
 

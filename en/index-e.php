@@ -1,5 +1,6 @@
-<?php 
-session_start();
+<?php
+include "../ayar.php";
+tekliftopla_start_session();
 
 if (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) {
     header('Location: giris-e.php');
@@ -170,6 +171,8 @@ include "sociallogin-e.php";
 		where bastarih <= now()
 		and sontarih >= now()
 		and rektip=2
+    and adet > tiksayac
+    and adet > 0
 		order by kaytarih asc limit 0,1";
 	$r=mysqli_query($connection,$q);
 	$n=mysqli_num_rows($r);
@@ -177,7 +180,7 @@ include "sociallogin-e.php";
 		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
 	}
 	else {
-		$q="select rekid, grafik, link from rekkayit where rektip=12 order by kaytarih desc limit 0,1";
+    $q="select rekid, grafik, link from rekkayit where rektip=12 and adet > tiksayac and adet > 0 order by kaytarih desc limit 0,1";
 		$r=mysqli_query($connection,$q);
 		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
 	}	

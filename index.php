@@ -1,5 +1,6 @@
 <?php
-session_start();
+include "ayar.php";
+tekliftopla_start_session();
 
 if (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) {
     header('Location: giris.php');

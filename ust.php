@@ -28,19 +28,14 @@ filter:alpha(opacity=20);
 
     <td width="176" align="left"><img src="image/logo.gif" width="176" height="62"></td>
 
-    <td width="400" align="center" valign="middle"><div align="center" style="position:relative;opacity:1;filter:alpha(opacity=100);width:400px;">
+    <td width="400" align="center" valign="middle"><?php if (!isset($connection) && isset($coni) && $coni instanceof mysqli) { $connection = $coni; } if (isset($connection) && $connection instanceof mysqli): ?><div align="center" style="position:relative;opacity:1;filter:alpha(opacity=100);width:400px;">
 
     <?php
 
-	include"ayar.php";
-
-	$connection=mysqli_connect($host,$user,$password,$db) or die("Some error occurred during connection " . mysqli_error($connection));
-
-mysqli_set_charset($connection,"utf8");
-
-		
-
-	$r=mysqli_query($connection,"select rekid, grafik, link from rekkayit 
+  $rekid = 0;
+  $grafik = '';
+  $link = '';
+  $r=mysqli_query($connection,"select rekid, grafik, link from rekkayit
 
 		where bastarih <= now()
 
@@ -48,27 +43,37 @@ mysqli_set_charset($connection,"utf8");
 
 		and rektip=1
 
+    and adet > tiksayac
+
+    and adet > 0
+
 		order by kaytarih asc limit 0,1");
 
-	$n=mysqli_num_rows($r);
+  $n=$r ? mysqli_num_rows($r) : 0;
 
 	if($n>0) {
 
-		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
+    if ($banner=mysqli_fetch_array($r)) {
+      list($rekid, $grafik, $link)=$banner;
+    }
 
 	}
 
 	else {
 
-		$r=mysqli_query($connection,"select rekid, grafik, link from rekkayit where rektip=11 order by kaytarih desc limit 0,1");
+    $r=mysqli_query($connection,"select rekid, grafik, link from rekkayit where rektip=11 and adet > tiksayac and adet > 0 order by kaytarih desc limit 0,1");
 
-		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
+    if ($r && ($banner=mysqli_fetch_array($r))) {
+      list($rekid, $grafik, $link)=$banner;
+    }
 
 	}
 
 	
 
-	mysqli_query($connection,"update rekkayit set sayac=sayac+1 where rekid=$rekid");
+  if ($rekid > 0 && $grafik !== '') {
+    mysqli_query($connection,"update rekkayit set sayac=sayac+1 where rekid=$rekid");
+  }
 
 	$reklam_link_code=urlencode($rekid);
 
@@ -122,7 +127,7 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 
 	   ?> 
 
-    </div></td>
+    </div><?php endif; ?></td>
 
     <td align="right" valign="middle" width="155" ><?php $englishTarget = (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) ? 'en/giris-e.php' : '/en/index-e.php'; ?>
     <a href="<?php echo $englishTarget; ?>"><img width="43" border="0" alt="UK-Flag" src="image/britishflag.gif"/></a><br>

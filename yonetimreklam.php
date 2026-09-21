@@ -104,7 +104,7 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 	echo $tiksayac;
 	}
 	
-	if( ($adet-$sayac)== 0 || $sontarih <= date("Y-m-d") ) {
+  if( ($adet-$tiksayac) <= 0 || $sontarih <= date("Y-m-d") ) {
     echo '<img src="image/exclamation.gif" border="0" width="20" style="float:right" />';
 	}
 	?>

@@ -26,34 +26,13 @@
 
     <td width="176" align="left"><img src="../image/logoa.gif" width="176" height="62"></td>
 
-    <td width="400" align="center" valign="middle"><!-- <div align="center" style="position:relative;opacity:1;filter:alpha(opacity=100);width:400px;">
+	<td width="400" align="center" valign="middle"><?php if (isset($connection) && $connection instanceof mysqli): ?><div align="center" style="position:relative;opacity:1;filter:alpha(opacity=100);width:400px;">
 
     <?php
 
-	include"../ayar.php";
-
-	/*$connection=mysql_connect($host,$user,$password) or die ("Unable to connect to MySQL server.");
-
-	$query="SET NAMES 'UTF8'";
-
-	mysql_select_db($db);
-
-	mysql_query($query); 
-
-	session_start();*/
-
-$connection=mysqli_connect($host,$user,$password,$db);
-
-if (!$connection) {
-
-    die("Connection failed: " . mysqli_connect_error());
-
-}
-
-mysqli_set_charset($connection,"utf8");
-
-		
-
+	$rekid = 0;
+	$grafik = '';
+	$link = '';
 	$q="select rekid, grafik, link from rekkayit 
 
 		where bastarih <= now()
@@ -62,31 +41,41 @@ mysqli_set_charset($connection,"utf8");
 
 		and rektip=1
 
+		and adet > tiksayac
+
+		and adet > 0
+
 		order by kaytarih asc limit 0,1";
 
 	$r=mysqli_query($connection,$q);
 
-	$n=mysqli_num_rows($r);
+	$n=$r ? mysqli_num_rows($r) : 0;
 
 	if($n>0) {
 
-		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
+		if ($banner=mysqli_fetch_array($r)) {
+			list($rekid, $grafik, $link)=$banner;
+		}
 
 	}
 
 	else {
 
-		$q="select rekid, grafik, link from rekkayit where rektip=11 order by kaytarih desc limit 0,1";
+		$q="select rekid, grafik, link from rekkayit where rektip=11 and adet > tiksayac and adet > 0 order by kaytarih desc limit 0,1";
 
 		$r=mysqli_query($connection,$q);
 
-		list($rekid, $grafik, $link)=mysqli_fetch_array($r);
+		if ($r && ($banner=mysqli_fetch_array($r))) {
+			list($rekid, $grafik, $link)=$banner;
+		}
 
 	}
 
 	
 
-	mysqli_query($connection,"update rekkayit set sayac=sayac+1 where rekid=$rekid");
+	if ($rekid > 0 && $grafik !== '') {
+		mysqli_query($connection,"update rekkayit set sayac=sayac+1 where rekid=$rekid");
+	}
 
 	$reklam_link_code=urlencode($rekid);
 
@@ -106,7 +95,7 @@ mysqli_set_charset($connection,"utf8");
 
  <script type="text/javascript">
 
-AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','370','height','80','src','reklamlar/<?php echo $grafik_name; ?>','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','reklamlar/<?php echo $grafik_name; ?>' ); //end AC code
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','370','height','80','src','../reklamlar/<?php echo $grafik_name; ?>','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','../reklamlar/<?php echo $grafik_name; ?>' ); //end AC code
 
     </script>
 
@@ -114,17 +103,17 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 
         <object style="position:absolute;top:0px;left:0px;z-index:5;" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="370" height="80" align="middle">
 
-          <param name="movie" value="reklamlar/<?php echo $grafik; ?>?clickTAG=http://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" />
+		  <param name="movie" value="../reklamlar/<?php echo $grafik; ?>?clickTAG=https://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" />
 
           <param name="quality" value="high" />
 
-          <embed src="reklamlar/<?php echo $grafik; ?>?clickTAG=http://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" width="370" type="application/x-shockwave-flash" height="80" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" align="middle"></embed>
+		  <embed src="../reklamlar/<?php echo $grafik; ?>?clickTAG=https://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" width="370" type="application/x-shockwave-flash" height="80" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=Flash" align="middle"></embed>
 
         </object>
 
         </noscript>     
 
-      <a style="position:absolute;top:0px;left:0px;z-index:10;width:400px;height:80px;text-indent:-9000px;" href="http://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" target="_blank"> /></a>
+	<a style="position:absolute;top:0px;left:0px;z-index:10;width:400px;height:80px;text-indent:-9000px;" href="https://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" target="_blank"> /></a>
 
 	  <?php
 
@@ -132,7 +121,7 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 
 	   ?>
 
-      <a href="http://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" target="_blank"><img src="reklamlar/<?php echo $grafik; ?>" border="0" width="385" height="60" /></a>
+	<a href="https://www.tekliftopla.com/redirectbanner.php?d=<?php echo $reklam_link_code; ?>" target="_blank"><img src="../reklamlar/<?php echo $grafik; ?>" border="0" width="385" height="60" /></a>
 
       <?php
 
@@ -140,7 +129,7 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 
 	   ?> 
 
-    </div> --></td>
+	</div><?php endif; ?></td>
 
     <td align="right" valign="middle" width="155" ><?php $turkishTarget = (isset($_SESSION['verified_firmaid']) && isset($_SESSION['verified_sifrem'])) ? '../giris.php' : '../index.php'; ?>
     <a href="<?php echo $turkishTarget; ?>"><img width="43" border="0" alt="Turkish-Flag" src="../image/turkflag.gif"/></a><br>
