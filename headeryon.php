@@ -14,5 +14,8 @@ if (!isset($_SESSION["verified_pass"]) || !isset($_SESSION["verified_user"])) {
     exit;
 }
 
+tekliftopla_require_csrf();
+ob_start('tekliftopla_inject_csrf_fields');
+
 $verified_user = $_SESSION["verified_user"] ?? '';
 ?>

@@ -1,10 +1,12 @@
 <?
 include"ayar.php";
+tekliftopla_start_session();
+tekliftopla_require_csrf();
 $coni = mysqli_connect($host,$user,$password,$db);
 if (mysqli_connect_errno())
    {
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-   } 
+   }
 mysqli_set_charset($coni,"utf8");
 
 /*session_start();

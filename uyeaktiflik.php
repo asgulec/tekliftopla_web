@@ -1,6 +1,7 @@
 <?
 include"ayar.php";
-session_start();
+tekliftopla_start_session();
+tekliftopla_require_csrf();
 /*$connection=mysql_connect("$host","$user","$password") or die ("Could not connect to the MySQL Server");
 $query="SET NAMES 'UTF8'";
 mysql_query($query);*/

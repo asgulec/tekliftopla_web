@@ -1,6 +1,7 @@
 <?
 include"../ayar.php";
-session_start();
+tekliftopla_start_session();
+tekliftopla_require_csrf();
 $connection=mysqli_connect($host,$user,$password,$db);
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());

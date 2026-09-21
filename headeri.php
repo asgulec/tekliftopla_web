@@ -11,5 +11,7 @@ if(!isset($_SESSION["verified_firmaid"]) || !isset($_SESSION["verified_sifrem"])
 	header("Location: index.php");
 	exit;
 }
+tekliftopla_require_csrf();
+ob_start('tekliftopla_inject_csrf_fields');
 $verified_firmaid = $_SESSION["verified_firmaid"];
 ?>

@@ -1,6 +1,7 @@
 <?
 include"ayar.php";
-session_start();
+tekliftopla_start_session();
+tekliftopla_require_csrf();
 ob_start();
 $coni = mysqli_connect($host,$user,$password,$db);
 if (mysqli_connect_errno())
