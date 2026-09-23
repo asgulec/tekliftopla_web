@@ -1,3 +1,5 @@
+<?php include "../ayar.php"; ?>
+
 <style type="text/css">
 .opakrenkli {
 	opacity:0.2;
@@ -12,7 +14,7 @@
     <td colspan="3" height="6"><img src= "../image/trans.gif" alt="" width="1" height="1"></td>
   </tr>
   <tr>
-    <td width="176" align="left"><img src="../image/logoa.gif" width="176" height="62"></td>
+    <td width="176" align="left"><img src="<?php echo TEKLIFTOPLA_LOGO_PATH; ?>" width="176" height="62"></td>
     <td width="400" align="center" valign="middle">
     <script type="text/javascript" src="http://go.linkwi.se/delivery/js/crl.js"></script>
     <script type="text/javascript">
