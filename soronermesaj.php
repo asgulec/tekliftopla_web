@@ -31,7 +31,7 @@ $html='
     <td colspan="2" bgcolor="#B5B8C0">&nbsp;</td>
   </tr>
   <tr> 
-    <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="http://www.tekliftopla.com/image/logo.gif" width="176" height="62"></a></td>
+    <td bgcolor="#FFFFFF" align="left"><a href="http://www.tekliftopla.com"><img src="<?php echo TEKLIFTOPLA_LOGO_URL; ?>" width="176" height="62"></a></td>
 	   <td bgcolor="#FFFFFF" align="center"><?php include("reklamlar/emailReklam.html"); ?></td>
   </tr>
   <tr> 

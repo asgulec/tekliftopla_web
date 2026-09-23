@@ -1,4 +1,5 @@
-html>
+<?php include "ayar.php"; ?>
+<html>
 <head>
 <title>TeklifTopla.com</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
@@ -12,14 +13,14 @@ html>
     <td bgcolor="#B5B8C0">&nbsp;</td>
   </tr>
   <tr>
-    <td><div align="center"><img src="image/logo.gif" width="176" height="62" vspace="5"></div></td>
+    <td><div align="center"><img src="<?php echo TEKLIFTOPLA_LOGO_PATH; ?>" width="176" height="62" vspace="5"></div></td>
   </tr>
   <tr>
     <td background="images/dot.gif"><img src="images/dot.gif" width="3" height="3"></td>
   </tr>
   <tr>
     <td><div align="center" class="govde">
-        <p>Girdiğiniz e-posta adresi sistemimizde kayıtlıdır. Şifrenizi unuttuysanız "Şifremi Unuttum" bağlantısını tıklayınız. 
+        <p>Girdiï¿½iniz e-posta adresi sistemimizde kayï¿½tlï¿½dï¿½r. ï¿½ifrenizi unuttuysanï¿½z "ï¿½ifremi Unuttum" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z. 
 </p>
         </div></td>
   </tr>

@@ -1,3 +1,4 @@
+<?php include "ayar.php"; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,7 +14,7 @@
     <td><br></td>
   </tr>
   <tr>
-    <td><div align="center"><img src="image/logo.gif" width="176" height="62" vspace="5"></div></td>
+    <td><div align="center"><img src="<?php echo TEKLIFTOPLA_LOGO_PATH; ?>" width="176" height="62" vspace="5"></div></td>
   </tr>
   <tr>
     <td>&nbsp;</td>

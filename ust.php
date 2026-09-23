@@ -26,7 +26,7 @@ filter:alpha(opacity=20);
 
   <tr>
 
-    <td width="176" align="left"><img src="image/logo.gif" width="176" height="62"></td>
+    <td width="176" align="left"><img src="<?php echo TEKLIFTOPLA_LOGO_PATH; ?>" width="176" height="62"></td>
 
     <td width="400" align="center" valign="middle"><?php if (!isset($connection) && isset($coni) && $coni instanceof mysqli) { $connection = $coni; } if (isset($connection) && $connection instanceof mysqli): ?><div align="center" style="position:relative;opacity:1;filter:alpha(opacity=100);width:400px;">
 
