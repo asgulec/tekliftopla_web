@@ -91,7 +91,7 @@ for($i=0;$i<$n;$i++) {
 
 	    $mail->From 	= "info@tekliftopla.com";
 
-	    $mail->Fromname = "tekliftopla";
+	    $mail->FromName = "tekliftopla";
 
 	    $mail_sent=$mail->Send();
 

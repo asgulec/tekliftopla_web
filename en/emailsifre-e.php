@@ -113,7 +113,7 @@ require_once("../class.phpmailer.php"); //Require file
   $mail->Encoding = "base64";
 	$mail->CharSet = "UTF-8";
 	$mail->From 	= "info@tekliftopla.com";
-	$mail->Fromname = "tekliftopla";
+	$mail->FromName = "tekliftopla";
 	$mail->Send();
 
 	header("Location:son-e.php");

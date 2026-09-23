@@ -126,7 +126,7 @@ if (isset($_POST["vemail"]) && isset($_POST["key"])) {
         $mail->IsHTML(false);
         $mail->CharSet = "UTF-8";
         $mail->From = "info@tekliftopla.com";
-        $mail->Fromname = "tekliftopla";
+        $mail->FromName = "tekliftopla";
         $mail->Send();
 
         header("HTTP/1.0 200");

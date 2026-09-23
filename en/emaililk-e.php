@@ -60,7 +60,7 @@ require_once("../class.phpmailer.php"); //Require file
 	$mail->IsHTML(false);
 	$mail->CharSet = "UTF-8";
 	$mail->From 	= "info@tekliftopla.com";
-	$mail->Fromname = "tekliftopla";
+	$mail->FromName = "tekliftopla";
 	$mail->Send();
 header("Location:ok-e.php");
 ob_end_flush();
