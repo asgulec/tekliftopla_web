@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="content-language" content="tr" />
 <title>tekliftopla</title>
+<?php include_once "ayar.php"; ?>
 <link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
 
