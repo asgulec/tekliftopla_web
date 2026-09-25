@@ -24,14 +24,14 @@
       <tr bgcolor="white"  >
         <td height="27px" width="25%" ></td>
         <td width="25%"></td>
-        <td width="43%" align="right" class="title">User Menu</td>
+        <td width="43%" align="right" class="title">My Account</td>
         <td width="7%" valign="bottom" align="center" ><img src="../image/sag_ok.gif"></td>
       </tr>
     </table>
     <table align="center" width="95%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <? $verified_firma = isset($_SESSION['verified_firma']) ? $_SESSION['verified_firma'] : ''; $verified_firmaid = isset($_SESSION['verified_firmaid']) ? $_SESSION['verified_firmaid'] : ''; ?>
-        <td bgcolor="#F6F6F6" colspan="4" align="left" class="Baslik" valign="middle">User Menu for <? echo $verified_firma;?></td>
+        <td bgcolor="#F6F6F6" colspan="4" align="left" class="Baslik" valign="middle">Account: <? echo $verified_firma;?></td>
       </tr>
       <?php
             $verified_firmaid = isset($_SESSION['verified_firmaid']) ? filter_var($_SESSION['verified_firmaid'], FILTER_VALIDATE_INT) : false;
@@ -62,14 +62,14 @@
             </TR>
             <?php if ( $tip == 1) {?>
             <TR style="display:none">
-              <td align="left"><span style="font-weight: bold"><i class="icon-stop-b"></i></span><a href="../kularagor1.php" class="link"> Teklif Bekleyenler </a></td>
+              <td align="left"><span style="font-weight: bold"><i class="icon-stop-b"></i></span><a href="../kularagor1.php" class="link"> Pending offers </a></td>
             </TR>
             <?php } ?>
             <TR>
-              <td align="left" class="govde"><span style="font-weight: bold"><i class="icon-stop-b"></i></span><a href="guncelleme-e.php" class="link"> Update User Info </a></td>
+              <td align="left" class="govde"><span style="font-weight: bold"><i class="icon-stop-b"></i></span><a href="guncelleme-e.php" class="link"> Update my information </a></td>
             </TR>
             <TR>
-              <td align="left" class="govde"><span style="font-weight: bold"><i class="icon-stop-b"></i></span><a href="cikis-e.php" class="link"> Log Out</a></td>
+              <td align="left" class="govde"><span style="font-weight: bold"><i class="icon-stop-b"></i></span><a href="cikis-e.php" class="link"> Log out</a></td>
             </TR>
             <tr>
               <td align="left"  class="title_kucuk" height="15" valign="middle"></span></td>

@@ -72,7 +72,7 @@ $(function(){
     <table width="95%" cellspacing="10" cellpadding="0" align="center" border="0">
       <tbody>
         <tr>
-          <td bgcolor="#F6F6F6" colspan="2" class="Baslik">Enter your e-mail address to receive your password. <br></td>
+          <td bgcolor="#F6F6F6" colspan="2" class="Baslik">Enter your email address to receive your password.<br></td>
         </tr>
         <tr>
           <td colspan="2" height="10"></td>
@@ -80,7 +80,7 @@ $(function(){
       <FORM name="LoginForm" id="LoginForm" action="emailunut-e.php" method="post" >
         <input type="hidden" name="yazi" id="yazi" >
         <TR>
-          <td class="govde" align="right" >E-mail address: </td>
+          <td class="govde" align="right" >Email address: </td>
           <td><input type="text" id="semail" name="semail" size=20 style="border: 1 solid #666666" width="200" >
             <FONT color=#990000>*</FONT></td>
         </TR>

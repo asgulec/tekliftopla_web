@@ -1,6 +1,6 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <div align="center">
-<span title="Clict to sign in with your Google account">
+<span title="Click to sign in with your Google account">
 <a href='../googleLogin.php?lang=en' style="text-decoration:none; ">
 <div style="width:90%; height:22px; line-height:22px; clear:left; margin-top:5px; margin-bottom:3px; background-color:#d64937; border-radius:3px">
   <div style="float:left; width:20%; border-radius: 3px 0 0 3; text-align:center; padding:3px 0 0 0;"><i class="icon-googleplus" style="color:#FFFFFF;"></i></div>

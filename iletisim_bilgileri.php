@@ -39,10 +39,6 @@
         <td class="govde" valign="center">+90 (322) 999 4814</td>
         </tr>
         <tr>
-        <td class="govde" valign="center" align="right">Faks :</td>
-        <td class="govde" valign="center">+90 (850) 220 4001</td>
-        </tr>
-        <tr>
         <td class="govde" valign="center" align="right">Proje Sorumlusu :</td>
         <td class="info" valign="center"><a class="link_k" href="mailto:selami@tekliftopla.com">A. Selami Güleç</a></td>
         </tr>

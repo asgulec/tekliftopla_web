@@ -66,12 +66,12 @@ return true;}
   <FORM name="frmGiris" id="frmGiris" action="kontrol-e.php" method="post"  onsubmit="return Validate(this)">
     <input type="hidden" id="yazi" name="yazi" >
     <tr>
-      <td height="18" align="center" valign="middle" style="font-size: 14px; font-weight: normal;" >User Log In</td>
+      <td height="18" align="center" valign="middle" style="font-size: 14px; font-weight: normal;" >User Login</td>
     </tr>
     <tr>
       <td height="115"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tr>
-            <td > e-mail </td>
+            <td >Email</td>
           </tr>
           <tr>
             <td ><input width="140" type="text" name="email" id="email"/></td>
@@ -83,12 +83,12 @@ return true;}
             <td ><input width="140" type="password" name="sifre" id="sifre"/></td>
           </tr>
           
-            <td height="28px" align="center" ><a href="#here" onClick='javascript:UyeGonder();' class="buttonPage">Enter &nbsp;<i class="icon-arrow-right-p" style="color: #294590 ; font-size:10px";></i></a></td>
+            <td height="28px" align="center" ><a href="#here" onClick='javascript:UyeGonder();' class="buttonPage">Login &nbsp;<i class="icon-arrow-right-p" style="color: #294590 ; font-size:10px";></i></a></td>
           </tr>
           <tr>
-            <td height="28" align="center" ><a href=#here onClick="location = 'forgetpass-e.php';" class="buttonPage">Forgot password &nbsp;<i class="icon-arrow-right-p" style="color: #294590 ; font-size:10px";></i></a></td>
+            <td height="28" align="center" ><a href=#here onClick="location = 'forgetpass-e.php';" class="buttonPage">Forgot password? &nbsp;<i class="icon-arrow-right-p" style="color: #294590 ; font-size:10px";></i></a></td>
           <tr>
-            <td height="28" align="center" valign="middle" style="font-weight: normal; font-size: 14px;" ><strong><a href="kayit-e.php" class="buttonPage">NEW USER &nbsp;<i class="icon-arrow-right-p" style="color: #294590 ; font-size:10px";></i></a> </strong></td>
+            <td height="28" align="center" valign="middle" style="font-weight: normal; font-size: 14px;" ><strong><a href="kayit-e.php" class="buttonPage">New User &nbsp;<i class="icon-arrow-right-p" style="color: #294590 ; font-size:10px";></i></a> </strong></td>
           </tr>
           <tr>
             <td height="8px" valign="bottom"></td>

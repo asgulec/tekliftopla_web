@@ -39,23 +39,19 @@
           <td colspan="2" height="10"></td>
         </tr>
         <tr>
-          <td class="govde" valign="center" align="right" width="40%">E-mail :</td>
+          <td class="govde" valign="center" align="right" width="40%">Email:</td>
           <td class="info" valign="center" width="60%"><a class="link_k" href="mailto:info@tekliftopla.com">info@tekliftopla.com</a></td>
         </tr>
         <tr>
-          <td class="govde" valign="center" align="right">Telephone :</td>
+          <td class="govde" valign="center" align="right">Telephone:</td>
           <td class="govde" valign="center">+90 (322) 999 4814</td>
         </tr>
         <tr>
-          <td class="govde" valign="center" align="right">Fax :</td>
-          <td class="govde" valign="center">+90 (850) 220 4001</td>
-        </tr>
-        <tr>
-          <td class="govde" valign="center" align="right">Project Manager :</td>
+          <td class="govde" valign="center" align="right">Project Manager:</td>
           <td class="info" valign="center"><a class="link_k" href="mailto:selami@tekliftopla.com">A. Selami Gulec</a></td>
         </tr>
         <tr>
-          <td class="govde" valign="top" align="right">Design and Implementation :</td>
+          <td class="govde" valign="top" align="right">Design &amp; Development:</td>
           <td class="link" valign="top"><a class="link_k" href="mailto:info@infomedya.com.tr">Infomedya IT Ltd Co.</a><br>
             <a class="link_k" href="mailto:selami@tekliftopla.com">A. Selami Gulec</a></td>
         </tr>

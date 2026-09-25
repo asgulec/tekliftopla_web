@@ -141,9 +141,9 @@ include "sociallogin-e.php";
 			$uyesay=mysqli_query($connection,"select firmaid from bilgi where aktivite=1 ");
 			$numuye=mysqli_num_rows($uyesay);	  
 		 ?>
-      <p align="center" style="font-family: Verdana, Geneva, sans-serif; font-size: 15px; color: #063; font-style: italic; font: Verdana;          font-weight: bold;">Send requests for proposal (RFP's) to<br>
+      <p align="center" style="font-family: Verdana, Geneva, sans-serif; font-size: 15px; color: #063; font-style: italic; font: Verdana;          font-weight: bold;">Send requests for proposals (RFPs) to<br>
         suppliers in Turkey.</p>
-      <p align="left" style="margin:3px" > <span class="govde">Easiest and free way to reach <?php echo number_format( $numuye); ?> suppliers in <?php echo $numsay; ?> lines of business in Turkey for your corporate or personal goods and services procurements. !!!<br>
+      <p align="left" style="margin:3px" > <span class="govde">The easiest free way to reach <?php echo number_format( $numuye); ?> suppliers across <?php echo $numsay; ?> business sectors in Turkey for your corporate or personal procurement needs.<br>
         <br>
         <br>
         <br>

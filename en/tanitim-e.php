@@ -31,25 +31,25 @@
           <tr>
             <td  >
                  <p class="govde">
-                "tekliftopla" is a popular phrase in Turkish meaning collect offers or get quotations.<br><br>
-                tekliftopla.com is a system that sends request for proposal (RFP) e-mails drafted by its users to suppliers in Turkey related to the goods and services described in the RFP's.<br> 
+                “tekliftopla” is a popular Turkish phrase meaning “collect offers” or “get quotations.”<br><br>
+                tekliftopla.com is a platform that sends request-for-proposal (RFP) emails drafted by users to suppliers in Turkey for the goods and services described in those requests.<br>
                 <br>
-                For example, if a buyer  in Sweden (or any other country) needs steel reinforcement bars, its RFP will be forwarded by e-mail to Turkish companies working in Iron and Steel Production and Supply.<br><br>
-                tekliftopla.com will only convey the RFP message and is not involved in the following stages of negotiations or agreement if any. The buyer and the supplier communicate directly by the address stated in the RFP e-mail.<br>
+                For example, if a buyer in Sweden (or any other country) needs steel reinforcement bars, the RFP will be forwarded by email to Turkish companies active in iron and steel production and supply.<br><br>
+                tekliftopla.com only delivers the RFP message and is not involved in the subsequent negotiation or agreement process. Buyers and suppliers communicate directly using the contact details provided in the RFP email.<br>
                 <br>
                 Usage is free of charge.<br><br>
-                With tekliftopla;
+                With tekliftopla, you will:
 </p>
                 <ul>
-                  <li><span class="govde">you will not surf the internet for hours to locate suppliers in Turkey only to learn that they are not ineterested in your business, </span>
-                  <li><span class="govde">you will not hassle with outdated telephone, industry, business or similar directories, </span>
-                  <li><span class="govde">you will not pay fees to update such directories, </span>
-                  <li><span class="govde">you will not spend your time reading brochures or leaflets, </span>
-                  <li><span class="govde">you will not spend money or time to reach Turkish companies to ask a quotation,</span>
-                  <li><span class="govde">you will have companies interested in your business directly contacting you,</span> 
-                  <li><span class="govde">you will issue RFP's whenever and wherever you want over the internet within a minute.</span>                  
+                  <li><span class="govde">avoid spending hours searching the internet for suppliers in Turkey only to find they are not interested in your business,</span></li>
+                  <li><span class="govde">avoid dealing with outdated telephone, industry, business, or similar directories,</span></li>
+                  <li><span class="govde">avoid paying fees to update such directories,</span></li>
+                  <li><span class="govde">avoid spending time reading brochures or leaflets,</span></li>
+                  <li><span class="govde">avoid wasting time and money reaching out to Turkish companies for quotations,</span></li>
+                  <li><span class="govde">receive direct contact from companies interested in your business,</span></li>
+                  <li><span class="govde">issue RFPs whenever and wherever you want, over the internet, in just a minute.</span></li>
               </ul>
-              <p><span class="govde">Please visit our <a href="soruoneri-e.php">Frequently Asked Questions (FAQ)</a> page for more information.<br><br>Try <a href="kayit-e.php">tekliftopla.com</a> now free of any charge.</span><span class="aciklama"><br>
+              <p><span class="govde">Please visit our <a href="soruoneri-e.php">Frequently Asked Questions (FAQ)</a> page for more information.<br><br>Try <a href="kayit-e.php">tekliftopla.com</a> free of charge.</span><span class="aciklama"><br>
               <br />
             </span></p></td>
           </tr>
