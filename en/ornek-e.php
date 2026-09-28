@@ -108,7 +108,7 @@
 
               <td class="title_kucuk" align="right">Deadline for Proposal :</td>
 
-              <td width="55%" class="govde">18-09-2021</td>
+              <td width="55%" class="govde">30-03-2027</td>
 
             </tr>
 

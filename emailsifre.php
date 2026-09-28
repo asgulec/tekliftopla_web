@@ -1,13 +1,25 @@
 <?
 include"ayar.php";
-session_start();
+tekliftopla_start_session();
 ob_start();
-include "headeri.php";
+if (isset($_GET['kaynak']) && $_GET['kaynak'] === 'eyonetici') {
+  $connection=mysqli_connect($host,$user,$password,$db);
+  if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+  mysqli_set_charset($connection,"utf8");
+  if (!isset($_SESSION["verified_pass"]) || !isset($_SESSION["verified_user"])) {
+    header("Location: index.php");
+    exit;
+  }
+} else {
+  include "headeri.php";
+}
 /*$connection=mysql_connect("$host","$user","$password") or die ("Could not connect to the MySQL Server");
 $query="SET NAMES 'UTF8'";
 mysql_query($query);
 mysql_select_db($db);*/
-$kaynak=mysqli_real_escape_string($connection,$_GET["kaynak"]);
+$kaynak=mysqli_real_escape_string($connection,$_GET["kaynak"] ?? '');
 if(!isset($_SESSION["verified_firmaid"])){
 ?>
 <script type='text/javascript'>alert("Hata");</script> 
@@ -224,7 +236,7 @@ require_once("class.phpmailer.php"); //Require file
 	//session_unregister("verified_email");
 	unset($_SESSION['verified_firma']);
 	//session_unregister("verified_firma");
-	header("Location:yonkayit.php?lcity=$sonsehir");
+  header("Location:yonkayit.php?lcity=$sonsehir");
 	ob_end_flush();
 	break;
 	}

@@ -52,7 +52,7 @@ if($etki > 0){
 	exit;
 }
 else{
- srand((double)microtime()*1000000); 
+ srand((float)microtime(true) * 1000000); 
      $vowels = array("W","X","C","B","a", "e", "i", "o", "u"); 
     $cons = array("R","O","K","L","N","H","b", "c", "d", "g", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "u", "v", "w", "tr", 
     "cr", "br", "fr", "th", "dr", "ch", "ph", "wr", "st", "sp", "sw", "pr", "sl", "cl"); 

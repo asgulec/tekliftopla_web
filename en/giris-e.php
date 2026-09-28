@@ -1,4 +1,16 @@
 <?php include"headeri-e.php";?>
+<?php
+if (!isset($connection) || !($connection instanceof mysqli)) {
+    if (!isset($host, $user, $password, $db)) {
+        require_once "../ayar.php";
+    }
+    $connection = mysqli_connect($host ?? 'localhost', $user ?? '', $password ?? '', $db ?? '');
+    if (!$connection) {
+        die("Database connection is unavailable.");
+    }
+    mysqli_set_charset($connection, "utf8");
+}
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
