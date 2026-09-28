@@ -81,6 +81,7 @@ else{
 $sif=substr($password1, 0, 6);
 $verified_sif=$sif;
 $_SESSION['verified_sif']=$verified_sif;
+$_SESSION['verified_sifrem']=$verified_sif;
 //session_register("verified_sif");
 $stmt = mysqli_prepare($connection, "DELETE FROM gecici1 WHERE firmaid = ?");
 if ($stmt) {
@@ -114,7 +115,7 @@ $_SESSION['verified_firmaid']=$verified_firmaid;
 mysqli_stmt_close($stmt);
 }
 }
-if($c1==0)
+if($c1==0 || $gkaynak==="google")
 {
 $stmt = mysqli_prepare($connection, "UPDATE bilgi SET tekliftopla = '0' WHERE firmaid = ?");
 if ($stmt) {

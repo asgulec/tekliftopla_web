@@ -1,28 +1,4 @@
-<? include"headerki.php";
-if (isset($_SESSION['verified_gemail']))
-{
-$email=isset($_SESSION['verified_gemail'])? $_SESSION['verified_gemail']:'';
-$sql1="SELECT sifre,email,firmaid,Firma_Adi FROM bilgi WHERE email='$email' ";
-    $result1 = mysqli_query($connection,$sql1) or die ("Couldn't execute SQL query");
-    $etki1=mysqli_num_rows($result1);
-    if($etki1)
-    {
-        while($row=mysqli_fetch_array($result1)){
-        $verified_email=$row['email'];
-        $_SESSION['verified_email']=$verified_email;
-        $verified_sifrem=$row['sifre'];
-        $_SESSION['verified_sifrem']=$verified_sifrem;
-        $verified_firmaid=$row['firmaid'];
-        $_SESSION['verified_firmaid']=$verified_firmaid;
-        $firma=$row['Firma_Adi'];	
-        $verified_firma=$firma;
-        $_SESSION['verified_firma']=$verified_firma;
-		}
-        header('location:giris.php');
-		exit();
-	}
-}
-?>
+<? include"headerki.php"; ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
