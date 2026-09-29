@@ -46,7 +46,7 @@
   </tr>
   <tr> 
     <td colspan="2" ><div align="center"> 
-        <p class="mesaj1">Your RFP below is sent to our relevant members in Turkey<br>supplying the described goods or services.</p>
+        <p class="mesaj1">Your RFP will be sent to relevant members in Turkey<br>who supply the goods or services you described.</p>
         <table width="550" border="0" cellpadding="0" cellspacing="2" bgcolor="#EFEFEF">
           <tr>
             <td><table width="550" border="0" cellpadding="0" cellspacing="5" bgcolor="#FFFFFF">
@@ -89,7 +89,7 @@
       </div>
       <p class="mesaj1" align="center">Please mention RFP number <strong><?php echo $teklifid; ?></strong> 
         in all correspondance with us.<br>
-        <span style="font-size:9px">(tekliftopla bears no responsibility explicitly or implied for the validity of the information stated above as well as the credibility and/or performance of the repliers to the RFP's.<span style="color:#CCC"><?php echo count($tummail); ?></span></span><br>	
+        <span style="font-size:9px">(teklifTopla is not responsible for the accuracy or validity of the information provided above, or for the credibility or performance of suppliers responding to this RFP.<span style="color:#CCC"><?php echo count($tummail); ?></span></span><br>
         <br>
         <a href="http://www.tekliftopla.com/en/index-e.php">www.tekliftopla.com</a> 
       </p></td>

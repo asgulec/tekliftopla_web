@@ -1,4 +1,7 @@
-<? include"headeri-e.php"; ?>
+<?php
+include "headeri-e.php";
+/** @var mysqli $connection */
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -337,7 +340,7 @@ $iletisim = $sure_miktar = $sure_birim = $text = '' ;
                       <td align="right" valign="top" class="govde">Description in English of <br>
                         goods or services requested : <br>
                         <br></td>
-                      <td class="govde"><textarea placeholder="(Details will increase the speed and relevance of replies....)" cols="55" name="text"  onKeyDown="textCounter(this.form.text,this.form.remLen,500)" onKeyUp="textCounter(this.form.text,this.form.remLen,500)" rows="10" wrap="soft"style="font-family: Arial; font-size: 9pt;"><?php echo $text; ?></textarea>
+					  <td class="govde"><textarea placeholder="Describe what you need clearly so suppliers can send relevant offers." cols="55" name="text"  onKeyDown="textCounter(this.form.text,this.form.remLen,500)" onKeyUp="textCounter(this.form.text,this.form.remLen,500)" rows="10" wrap="soft"style="font-family: Arial; font-size: 9pt;"><?php echo $text; ?></textarea>
                         <br>
                         Remaining characters:
                         <input name="remLen" type="text" value="500" size="6"  maxlength=3 readonly ></td>
