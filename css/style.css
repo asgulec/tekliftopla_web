@@ -1,17 +1,30 @@
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: Arial, "Segoe UI", Tahoma, sans-serif;
+	}
+	body {
+		font-size: 12px;
+		line-height: 1.4;
+		color: #333333;
+	}
+
 	.input			{ font-family:Verdana; font-size:11px; color:#000000;  background-color:#FFFFFF; }
 	.onay			{ font-family:Verdana; font-size:11px; color:#000000; background-color:#FFFFFF; }
 	.select			{ font-family:Verdana; font-size:11px; color:#000000; border:1px solid #656654; background-color:#FFFFFF; }
-    .title			{ FONT-SIZE: 15px; color:#360; FONT-FAMILY: verdana; font-weight: bold;}
-	.title_kucuk	{ FONT-SIZE: 12px; color:#360; FONT-FAMILY: verdana;}
-	.not			{ FONT-SIZE: 11px; color:#77A20D; FONT-FAMILY: verdana;}
+	.title			{ FONT-SIZE: 15px; line-height: 1.2; color:#360; FONT-FAMILY: Arial, "Segoe UI", Tahoma, sans-serif; font-weight: bold;}
+	.title_kucuk	{ FONT-SIZE: 12px; color:#360; FONT-FAMILY: verdana; font-weight: normal;}
+	.not			{ FONT-SIZE: 12px; line-height: 1.4; color:#333333; FONT-FAMILY: verdana; font-weight: normal;}
     .resim          {		cursor: pointer; }
 	.Buyuk_Yazi     { FONT-SIZE: 18px; color: #7FAC06; FONT-FAMILY: verdana;font-weight: bold;}
-	.link			{ FONT-SIZE: 12px; color:3B7FBD; FONT-FAMILY: verdana; }
-	.link_k			{ FONT-SIZE: 12px; color:3B7FBD; FONT-FAMILY: verdana; }
-	.govde          { FONT-SIZE: 11px; color:#000000; FONT-FAMILY: verdana; font-weight: normal;}
+	.link			{ FONT-SIZE: 12px; color:3B7FBD; FONT-FAMILY: verdana; font-weight: normal; }
+	.link_k			{ FONT-SIZE: 12px; color:3B7FBD; FONT-FAMILY: verdana; font-weight: normal; }
+	.govde          { FONT-SIZE: 12px; line-height: 1.4; color:#000000; FONT-FAMILY: Arial, "Segoe UI", Tahoma, sans-serif; font-weight: normal;}
 	.Baslik			{ FONT-SIZE: 12px; color:#000000; FONT-FAMILY: verdana;	font-weight: bold;}
 	.ResimDugme 	{ cursor: pointer;}
-	.Dugme { border: 1px outset #676651; cursor: pointer; font-family:Verdana; font-size:11px; font-weight:bold; color:black;				margin:0px 0px 0px 0px;	padding: 1px 1px 1px 1px; background-image: url(buton_zemin.gif); backgroung-image: repeat-x;}
+	.Dugme { border: 1px outset #676651; cursor: pointer; font-family:Verdana; font-size:11px; line-height:14px; font-weight:bold; color:black;				margin:0px 0px 0px 0px;	padding: 1px 1px 1px 1px; background-image: url(buton_zemin.gif); background-repeat: repeat-x;}
 	.AnaBaslik		{ FONT-SIZE: 13px; color:#FFFFFF;	FONT-FAMILY: verdana; font-weight: bold; }
 	.hidden			{display: none;}
 	img {    vertical-align: top;}
@@ -109,12 +122,12 @@ div.ui-datepicker {
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	color:#666666;
-	font-family:Verdana,Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS",  sans-serif;
+	font-family: Arial, "Segoe UI", Tahoma, sans-serif;
 	font-size:10px;
 	font-weight:bold;
 	font-style:normal;
-	height:16px;
-	line-height:16px;
+	height:18px;
+	line-height:18px;
 	width:150px;
 	text-decoration:none;
 	text-align:left;
@@ -147,8 +160,8 @@ div.ui-datepicker {
 	font-size:11px;
 	font-weight:bold;
 	font-style:normal;
-	height:16px;
-	line-height:16px;
+	height:18px;
+	line-height:18px;
 	width:135px;
 	text-decoration:none;
 	text-align:center;
@@ -157,6 +170,24 @@ div.ui-datepicker {
 }.buttonPage:active {
 	position:relative;
 	top:1px;
+}
+.login-panel {
+	box-sizing: border-box;
+	padding: 6px;
+}
+.empty-state {
+	box-sizing: border-box;
+	padding: 18px 12px;
+	border: 1px solid #d9dde3;
+	background: #f7f8fa;
+	color: #333333;
+	line-height: 1.4;
+}
+.empty-state-title {
+	display: block;
+	margin-bottom: 6px;
+	color: #333333;
+	font-weight: bold;
 }
 /* This button was generated using CSSButtonGenerator.com */
 @font-face {
@@ -172,7 +203,6 @@ div.ui-datepicker {
 }
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;

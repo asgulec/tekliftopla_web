@@ -63,7 +63,7 @@ return true;}
 </style>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
-<table class="text_s" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F6F6F6">
+<table class="text_s login-panel" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F6F6F6">
 <FORM name="frmGiris" id="frmGiris" action="kontrol.php" method="post"  onsubmit="return Validate(this)">
 <input type="hidden" id="yazi" name="yazi" >
   <tr>

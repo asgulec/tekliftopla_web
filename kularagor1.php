@@ -123,10 +123,10 @@ echo "</td></tr>";
 
 else{?>
                     <tr>
-                                        <td colspan="5" align="center" valign="middle" class="govde"><strong><br>
-      İş kollarınızda aktif teklif talebi yoktur.<br>
-      <br>
-                      </strong></td>
+                      <td colspan="5" align="center" valign="middle" class="govde empty-state">
+                        <div class="empty-state-title">Aktif teklif talebi bulunmuyor</div>
+                        <div>İş kollarınıza uygun yeni talepler geldiğinde burada görüntülenecektir.</div>
+                      </td>
                     </tr>
                                       <?}?>
                                       <tr>
