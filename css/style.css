@@ -15,6 +15,8 @@
 	.onay			{ font-family:Verdana; font-size:11px; color:#000000; background-color:#FFFFFF; }
 	.select			{ font-family:Verdana; font-size:11px; color:#000000; border:1px solid #656654; background-color:#FFFFFF; }
 	.title			{ FONT-SIZE: 15px; line-height: 1.2; color:#360; FONT-FAMILY: Arial, "Segoe UI", Tahoma, sans-serif; font-weight: bold;}
+	td.title		{ padding: 4px 8px; vertical-align: middle; }
+	p.title			{ margin: 0; padding: 8px 0; }
 	.title_kucuk	{ FONT-SIZE: 12px; color:#360; FONT-FAMILY: verdana; font-weight: normal;}
 	.not			{ FONT-SIZE: 12px; line-height: 1.4; color:#333333; FONT-FAMILY: verdana; font-weight: normal;}
     .resim          {		cursor: pointer; }
@@ -23,6 +25,7 @@
 	.link_k			{ FONT-SIZE: 12px; color:3B7FBD; FONT-FAMILY: verdana; font-weight: normal; }
 	.govde          { FONT-SIZE: 12px; line-height: 1.4; color:#000000; FONT-FAMILY: Arial, "Segoe UI", Tahoma, sans-serif; font-weight: normal;}
 	.Baslik			{ FONT-SIZE: 12px; color:#000000; FONT-FAMILY: verdana;	font-weight: bold;}
+	td.Baslik		{ padding: 8px 10px; line-height: 1.4; }
 	.ResimDugme 	{ cursor: pointer;}
 	.Dugme { border: 1px outset #676651; cursor: pointer; font-family:Verdana; font-size:11px; line-height:14px; font-weight:bold; color:black;				margin:0px 0px 0px 0px;	padding: 1px 1px 1px 1px; background-image: url(buton_zemin.gif); background-repeat: repeat-x;}
 	.AnaBaslik		{ FONT-SIZE: 13px; color:#FFFFFF;	FONT-FAMILY: verdana; font-weight: bold; }
@@ -99,8 +102,9 @@ div.ui-datepicker {
 	
 }
 #analong {
-	width:555px;
+	width:543px;
 	float:left;
+	margin-left:12px;
 	overflow:hidden;
 	height:auto;
 }
@@ -174,6 +178,11 @@ div.ui-datepicker {
 .login-panel {
 	box-sizing: border-box;
 	padding: 6px;
+}
+.login-panel input[type="text"],
+.login-panel input[type="password"] {
+	box-sizing: border-box;
+	width: 100%;
 }
 .empty-state {
 	box-sizing: border-box;

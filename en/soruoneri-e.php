@@ -32,19 +32,19 @@
         <td bgcolor="#F6F6F6" align="left" valign="middle" class="Baslik" >Frequently Asked Questions</td>
       </tr>
       <tr>
-        <td valign="top" ><p class="govde">Please feel free to send an e-mail to <a href="mailto:info@tekliftopla.com">info@tekliftopla.com</a> for any other question that you would like to be answered. We also welcome all suggestions for improvements.</p>
+        <td valign="top" ><p class="govde">For other questions or suggestions, email us at <a href="mailto:info@tekliftopla.com">info@tekliftopla.com</a>.</p>
           <ul>
-            <li><span class="govde"><strong><em>Why  tekliftopla.com ?</em></strong></span><br>
-              <p class="govde">Very easy to use. It has one primary purpose; transmit your goods and services needs to related member suppliers in Turkey. </p>
+            <li><span class="govde"><strong><em>Why tekliftopla.com?</em></strong></span><br>
+              <p class="govde">It is easy to use and sends your requests to member suppliers in Turkey who provide the relevant goods or services and serve your delivery destination.</p>
             </li>
-            <li><span class="govde"><em><strong>Where do you e-mail my RFP's?</strong></em></span>
-              <p class="govde">Your request for proposls (RFP's) are sent to supplier members in Turkey active in production and sale of goods and services described in your RFP's.</p>
+            <li><span class="govde"><em><strong>Who receives my RFP?</strong></em></span>
+              <p class="govde">We email your RFP to member suppliers whose products or services match your request and who serve the delivery destination you selected.</p>
             </li>
-            <li><span class="govde"><strong><em>How do I follow up my RFP's?</em></strong></span>
-              <p class="govde">Interested suppliers will be contacting you directly via the e-mail you have stated. You can then proceed your negotiations at your own discretion and methods. tekliftopla is not involved in any following stages of the process. </p>
+            <li><span class="govde"><strong><em>How do I follow up on my RFP?</em></strong></span>
+              <p class="govde">Interested suppliers contact you directly using the contact details in your RFP. You and the suppliers handle any negotiations and next steps; tekliftopla.com is not involved.</p>
             </li>
-            <li><span class="govde"><strong><em>Can I use the system for my needs in Turkey or is it only for exports?</em></strong></span>
-              <p class="govde">You can use the sytem for both domestic and export RFP's. When the country of delivery is selected as &quot;Turkey&quot; you will be asked to select a city in Turkey. In this case your RFP will be conveyed to our members supplying to that city in Turkey. If any country other than &quot;Turkey&quot; is selected as destination, your RFP will be sent to suppliers interested in exporting to the country stated in the RFP. </p>
+            <li><span class="govde"><strong><em>Can I submit requests for delivery in Turkey, or only for export?</em></strong></span>
+              <p class="govde">You can submit both domestic and export RFPs. For delivery in Turkey, select Turkey and then choose a city. We send your RFP to member suppliers who serve that city. For delivery outside Turkey, select the destination country; we send your RFP to members interested in exporting there.</p>
             </li>
           </ul></td>
       </tr>

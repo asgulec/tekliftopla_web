@@ -31,22 +31,22 @@
         <td height="2" bgcolor="#FFFFFF"></td>
       </tr>
       <tr >
-        <td bgcolor="#F6F6F6" width="210" align="left" valign="middle" class="Baslik" >Sık sorulan sorular..</td>
+        <td bgcolor="#F6F6F6" width="210" align="left" valign="middle" class="Baslik" >Sık Sorulan Sorular</td>
         </tr>
       <tr>
       <td valign="top" >
-	<p class="govde">Aşağıdakiler dışında merak ettiğiniz her konu için sorunuzu <a href="mailto:info@tekliftopla.com">info@tekliftopla.com</a> adresine e-posta ile gönderebilirsiniz. </p>
+	<p class="govde">Başka sorularınız varsa <a href="mailto:info@tekliftopla.com">info@tekliftopla.com</a> adresine e-posta gönderebilirsiniz.</p>
                 <ul>
                   <li><span class="govde"><strong><em>Neden tekliftopla.com ?</em></strong></span><br>
-                  <p class="govde">Kullanımı kolaydır. Tek bir amacı vardır: ihtiyaçlarınızı ilgili sektör ve teklif istediğiniz şehirde faaliyet gösteren üyelere iletmek.  </p></li>
+                  <p class="govde">Kullanımı kolaydır. Tek amacımız, teklif taleplerinizi ilgili sektörde ve belirttiğiniz şehirde faaliyet gösteren üyelere iletmektir.</p></li>
                   <li><span class="govde"><em><strong>Teklif talebim kimlere gönderiliyor?</strong></em></span>
-                  <p class="govde">Teklif istediğiniz mal veya hizmeti, teslim yeri olarak belirttiğiniz şehirde tedarik etmek isteyen üyelere e-posta olarak gönderilir. </p></li>
+                  <p class="govde">Talebiniz, istediğiniz mal veya hizmeti teslimat için belirttiğiniz şehirde sağlayan üyelere e-postayla gönderilir.</p></li>
                   <li><span class="govde"><strong><em>Teklif taleplerini nasıl takip ederim?</em></strong></span>
-                  <p class="govde">Üyelik kaydınızda belirttiğiniz faaliyet alanları ve şehirlerde istenilen teklif talepleri size e-posta olarak iletilir. Teklif isteyenin belirttiği iletişim yöntemi ile doğrudan temas kurarak teklifinizi verirsiniz. </p></li>
-                  <li><span class="govde"><strong><em>Teklif talepleriyle ilgilenmiyorum, sadece ihtiyaçlarım için teklif toplamak isteyebilir miyim?</em></strong></span>
-                  <p class="govde">Evet. Üyelik kaydınız sırasında veya daha sonra değiştirerek bu tercihi işaretlerseniz teklif talepleri size gönderilmez. </p></li>
-<li><span class="govde"><strong><em>Her teklif talebi için ayrı bir e-posta almak istemiyorum, teklif taleplerini nasıl takip ederim?</em></strong></span>
-  <p class="govde">Size gelen teklif talep e-postalarının altında bulunan &quot;Mesaj listesinden çıkmak için tıklayınız&quot; tercihini kullanarak e-postaların gönderilmesini durdurabilirsiniz. Daha sonra arzu ettiğiniz zamanlarda tekliftopla.com sitesine girerek faaliyet gösterdiğiniz alanlardaki teklif tarihi geçmemiş teklif taleplerinin listesini inceleyebilirsiniz.</p></li>
+                  <p class="govde">Faaliyet alanınız ve seçtiğiniz şehirle eşleşen talepler size e-postayla iletilir. Teklif vermek için talep sahibine, belirttiği iletişim yöntemiyle doğrudan ulaşabilirsiniz.</p></li>
+                  <li><span class="govde"><strong><em>Yalnızca kendi ihtiyaçlarım için teklif toplayabilir miyim?</em></strong></span>
+                  <p class="govde">Evet. Kayıt sırasında “Sadece ihtiyaçlarım için teklif toplamak istiyorum” seçeneğini işaretleyebilir veya bu tercihi daha sonra değiştirebilirsiniz. Böylece diğer üyelerin talepleri size gönderilmez.</p></li>
+<li><span class="govde"><strong><em>Her talep için ayrı e-posta almak istemiyorum. Talepleri nasıl takip edebilirim?</em></strong></span>
+  <p class="govde">E-posta bildirimlerini durdurmak için gelen mesajların altındaki “Mesaj listesinden çıkmak için tıklayınız” bağlantısını kullanın. Daha sonra Kullanım menüsünden faaliyet alanınıza uygun, son tarihi geçmemiş talepleri görüntüleyebilirsiniz.</p></li>
           </ul>
       </td>
       </tr>

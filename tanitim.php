@@ -20,7 +20,7 @@
             </tr>
             <tr bgcolor="white"  >
               <td height="64" width="191" ></td>
-			  <td width="164"></td>
+              <td width="152"></td>
 			  <td width="173" align="right" class="title">Hakkımızda</td>
               <td width="27" ><img src="image/sag_ok.gif" width="27" height="64"></td>
             </tr>
@@ -31,33 +31,33 @@
           </tr>
           <tr>
             <td  ><p></p>
-              <p><span class="govde">Kısa tanıtım için <a href="tekliftopla sunum.ppsx" target="_blank"> tıklayınız </a>.</span> </p>
+              <p><span class="govde">Kısa tanıtım sunumunu <a href="tekliftopla sunum.ppsx" target="_blank">buradan izleyebilirsiniz</a>.</span></p>
                 <p class="govde">
-                tekliftopla.com üyelerinin kayıtlı olduğu sektörlerde ve faaliyet gösterdikleri şehirlerde istenilen mal veya hizmet teklif taleplerini bu üyelerine e-posta ile duyuran bir sistemdir.<br> 
+                tekliftopla.com, teklif taleplerini ilgili sektörde faaliyet gösteren ve talep edilen şehre hizmet veren üyelerine e-postayla iletir.<br>
                 <br>
-                Örneğin Denizli'de inşaat demiri satın almak isteyen bir üyemizin teklif talebi, demir-çelik sektörüne kayıtlı ve Denizli'ye hizmet vermek isteyen üyelerimize e-posta ile duyurulur.<br><br>
-                tekliftopla.com sadece teklif taleplerini duyurur. Satın alma sürecinin takip eden aşamalarına karışmaz. Teklif isteyen ve veren, mesajda belirtilen başvuru adresi ile doğrudan iletişim kurar.<br>
+                Örneğin, Denizli'de inşaat demiri almak isteyen bir üyenin talebi, demir-çelik sektöründe kayıtlı ve Denizli'ye hizmet veren üyelere e-postayla gönderilir.<br><br>
+                tekliftopla.com yalnızca talepleri iletir; satın alma sürecinin sonraki aşamalarına dahil olmaz. Talep sahibi ve teklif veren, talepte belirtilen iletişim bilgileri üzerinden doğrudan iletişim kurarlar.<br>
                 <br>
                 Üyelik ve kullanım ücretsizdir.<br><br>
-                Bu sayede;
+                Teklif talep ettiğinizde;
 </p>
                 <ul>
-                  <li><span class="govde">güncelliğini yitirmiş telefon, sanayi, iş ve benzeri rehberlerle uğraşmazsınız, </span>
-                  <li><span class="govde">bu tip rehberleri güncel tutmak için sürekli ücretler ödemezsiniz, </span>
-                  <li><span class="govde">gününüzü gelen tanıtım yazı ve broşürleri okumakla geçirmezsiniz, </span>
-                  <li><span class="govde">teklif isteyeceğiniz firmalara ulaşmak için vakit ve para harcamazsınız,</span>
-                  <li><span class="govde">sizin işinizle ilgileneceğine emin olduğunuz firmaların, sizin tespit edeceğiniz yöntemlerle size müracaat etmesini sağlarsınız,</span> 
-                  <li><span class="govde">teklif toplamayı istediğiniz zaman ve yerde internet üzerinden bir dakikada gerçekleştirirsiniz.</span>
+                  <li><span class="govde">güncelliğini yitirmiş telefon, sanayi ve iş rehberlerini araştırmakla uğraşmaz,</span>
+                  <li><span class="govde">bu rehberleri güncel tutmak için sürekli ödeme yapmaz,</span>
+                  <li><span class="govde">tanıtım yazıları ve broşürleri okuyarak zaman kaybetmez,</span>
+                  <li><span class="govde">teklif isteyeceğiniz firmaları bulmak için zaman ve para harcamaz,</span>
+                  <li><span class="govde">işinizle ilgilenebilecek firmaların, tercih ettiğiniz yöntemle size ulaşmasını sağlarsınız,</span>
+                  <li><span class="govde">istediğiniz zaman ve yerden, internet üzerinden bir dakikada teklif toplarsınız.</span>
               </ul><span class="govde">
-              Öte yandan;</span>
+              Teklif verenler olarak;</span>
               <ul>
-                <li><span class="govde">gününüzü teklif toplayanların telefonu bekleyerek geçirmezsiniz,</span>
-                <li><span class="govde">toplanan teklifleri takip etmek için gazete, mektup, faks ve benzeri ortamlara vakit ve para harcamazsınız,</span>
-                <li><span class="govde">her gün bir yenisi çıkan ve çıktığı anda güncelliğini kaybeden bir sürü iş rehberine sürekli paralar ödemezsiniz,</span>
-                <li><span class="govde">teklif toplayacak şirketlere kendinizi tanıtmak için okunmadan çöpe giden mektup ve broşürlere emek ve para harcamazsınız, </span>                
-                <li><span class="govde">teklif vermek istediğiniz sektörleri kendiniz belirlemek, değiştirmek,toplanan tekliflerden hemen ve her yerde haberdar olursunuz.</span> 
+                <li><span class="govde">teklif toplamak isteyenlerin telefonlarını bekleyerek zaman kaybetmez,</span>
+                <li><span class="govde">teklifleri takip etmek için gazete, mektup veya faksla uğraşmaz,</span>
+                <li><span class="govde">güncelliğini hızla yitiren iş rehberlerine sürekli ödeme yapmaz,</span>
+                <li><span class="govde">kendinizi tanıtmak için okunmadan atılabilecek mektup ve broşürlere zaman ve para harcamaz,</span>
+                <li><span class="govde">teklif vermek istediğiniz sektörleri kendiniz belirler, gelen taleplerden hemen ve her yerde haberdar olursunuz.</span>
               </ul>
-        <span class="govde">Hemen <a href="kayit.php">tekliftopla.com</a> internet sitesine bedava kaydolun.</span><span class="aciklama"><br>
+        <span class="govde"><a href="kayit.php">Hemen ücretsiz kaydolun.</a></span><span class="aciklama"><br>
          </span></td>
           </tr>
           <tr>

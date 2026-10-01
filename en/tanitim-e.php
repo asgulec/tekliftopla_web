@@ -31,25 +31,25 @@
           <tr>
             <td  >
                  <p class="govde">
-                “tekliftopla” is a popular Turkish phrase meaning “collect offers” or “get quotations.”<br><br>
-                tekliftopla.com is a platform that sends request-for-proposal (RFP) emails drafted by users to suppliers in Turkey for the goods and services described in those requests.<br>
+                “tekliftopla” is a common Turkish phrase meaning “collect offers” or “get quotes.”<br><br>
+                tekliftopla.com emails your request for a proposal (RFP) to member suppliers in Turkey whose products or services match your request and who serve its delivery destination.<br>
                 <br>
-                For example, if a buyer in Sweden (or any other country) needs steel reinforcement bars, the RFP will be forwarded by email to Turkish companies active in iron and steel production and supply.<br><br>
-                tekliftopla.com only delivers the RFP message and is not involved in the subsequent negotiation or agreement process. Buyers and suppliers communicate directly using the contact details provided in the RFP email.<br>
+                For example, if a buyer in Sweden needs reinforcing steel, the request is emailed to Turkish member suppliers in the iron and steel sector who serve Sweden.<br><br>
+                tekliftopla.com only forwards requests. Buyers and suppliers communicate directly using the contact details in the request; we are not involved in negotiations or agreements.<br>
                 <br>
-                Usage is free of charge.<br><br>
-                With tekliftopla, you will:
+                Membership and use are free.<br><br>
+                With tekliftopla.com, you can:
 </p>
                 <ul>
-                  <li><span class="govde">avoid spending hours searching the internet for suppliers in Turkey only to find they are not interested in your business,</span></li>
-                  <li><span class="govde">avoid dealing with outdated telephone, industry, business, or similar directories,</span></li>
-                  <li><span class="govde">avoid paying fees to update such directories,</span></li>
-                  <li><span class="govde">avoid spending time reading brochures or leaflets,</span></li>
-                  <li><span class="govde">avoid wasting time and money reaching out to Turkish companies for quotations,</span></li>
-                  <li><span class="govde">receive direct contact from companies interested in your business,</span></li>
-                  <li><span class="govde">issue RFPs whenever and wherever you want, over the internet, in just a minute.</span></li>
+                  <li><span class="govde">spend less time searching for Turkish suppliers who may not be interested in your request,</span></li>
+                  <li><span class="govde">skip outdated telephone, industry, and business directories,</span></li>
+                  <li><span class="govde">avoid paying to keep those directories up to date,</span></li>
+                  <li><span class="govde">spend less time reading promotional brochures and leaflets,</span></li>
+                  <li><span class="govde">avoid contacting suppliers one by one for quotes,</span></li>
+                  <li><span class="govde">hear directly from suppliers interested in your request,</span></li>
+                  <li><span class="govde">send requests online in about a minute, whenever and wherever you need.</span></li>
               </ul>
-              <p><span class="govde">Please visit our <a href="soruoneri-e.php">Frequently Asked Questions (FAQ)</a> page for more information.<br><br>Try <a href="kayit-e.php">tekliftopla.com</a> free of charge.</span><span class="aciklama"><br>
+              <p><span class="govde">For more information, visit our <a href="soruoneri-e.php">Frequently Asked Questions (FAQ)</a> page.<br><br><a href="kayit-e.php">Register for free</a> at tekliftopla.com.</span><span class="aciklama"><br>
               <br />
             </span></p></td>
           </tr>
