@@ -157,9 +157,17 @@ if ($cevap == 'epostayok') {?>
   <div id="sat1">
 
     <?php include "menuindex.php" ?>
-
     <?php include "sociallogin.php" ?>
-
+    <?php
+    if (isset($_SESSION['google_login_error'])) {
+        $googleLoginError = $_SESSION['google_login_error'];
+        unset($_SESSION['google_login_error']);
+        $googleLoginMessage = $googleLoginError === 'cancelled'
+            ? 'Google ile giriş iptal edildi. Tekrar deneyebilirsiniz.'
+            : 'Google ile giriş tamamlanamadı. Lütfen tekrar deneyin; sorun sürerse destek ekibimizle iletişime geçin.';
+        echo '<p role="alert" style="color:#a00; padding:6px;">' . htmlspecialchars($googleLoginMessage, ENT_QUOTES, 'UTF-8') . '</p>';
+    }
+    ?>
   </div>
 
   <div id="sat2g">

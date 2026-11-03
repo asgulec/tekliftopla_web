@@ -31,7 +31,6 @@ $gClient->setApplicationName('tekliftopla');
 $gClient->setClientId($google_client_id);
 $gClient->setClientSecret($google_client_secret);
 $gClient->setRedirectUri($google_redirect_url);
-$gClient->setDeveloperKey($google_developer_key);
 $gClient->setApprovalPrompt("auto");
 
 $google_oauthV2 = new Google_Oauth2Service($gClient);
@@ -49,6 +48,9 @@ if (isset($_REQUEST['reset']))
 
 if (isset($_GET['error'])) //ASG
 { 
+    $_SESSION['google_login_error'] = (isset($_GET['error']) && $_GET['error'] === 'access_denied')
+        ? 'cancelled'
+        : 'failed';
     if ($_SESSION['lang'] === 'tr') {
 	header('Location: index.php');
         exit;
@@ -68,7 +70,9 @@ if (isset($_GET['code']))
         $gClient->authenticate($_GET['code']);
         $_SESSION['token'] = $gClient->getAccessToken();
     } catch (Exception $e) {
+        error_log('Google OAuth token exchange failed: ' . $e->getMessage());
         unset($_SESSION['token']);
+        $_SESSION['google_login_error'] = 'failed';
         if ($_SESSION['lang'] === 'tr') {
             header('Location: index.php?google_error=1');
         } else {
@@ -108,7 +112,9 @@ if ($gClient->getAccessToken())
           $personMarkup         = "$email<div><img src='$profile_image_url?sz=50'></div>";
           $_SESSION['token']    = $gClient->getAccessToken();
       } catch (Exception $e) {
+          error_log('Google OAuth profile lookup failed: ' . $e->getMessage());
           unset($_SESSION['token']);
+          $_SESSION['google_login_error'] = 'failed';
           if ($_SESSION['lang'] === 'tr') {
               header('Location: index.php?google_error=1');
           } else {

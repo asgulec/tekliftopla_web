@@ -148,3 +148,28 @@ Stack trace:
 [23-Sep-2026 07:24:21 UTC] PHP Fatal error:  Cannot redeclare tekliftopla_inject_csrf_fields() (previously declared in /home3/tekliftopla/public_html/ayar.php:110) in /home3/tekliftopla/public_html/ayar.php on line 110
 [23-Sep-2026 07:29:06 UTC] PHP Fatal error:  Cannot redeclare tekliftopla_inject_csrf_fields() (previously declared in /home3/tekliftopla/public_html/ayar.php:110) in /home3/tekliftopla/public_html/ayar.php on line 110
 [23-Sep-2026 07:29:08 UTC] PHP Fatal error:  Cannot redeclare tekliftopla_inject_csrf_fields() (previously declared in /home3/tekliftopla/public_html/ayar.php:110) in /home3/tekliftopla/public_html/ayar.php on line 110
+[07-Oct-2026 20:05:23 UTC] PHP Warning:  session_set_cookie_params(): Cannot change session cookie parameters when headers already sent in /home3/tekliftopla/public_html/ayar.php on line 53
+[07-Oct-2026 20:05:23 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home3/tekliftopla/public_html/ayar.php on line 55
+[07-Oct-2026 20:05:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/tekliftopla/public_html/en/sifrem-e.php:1) in /home3/tekliftopla/public_html/headeri.php on line 11
+[09-Oct-2026 21:13:16 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No such file or directory in /home3/tekliftopla/public_html/ip.php on line 7
+[16-Oct-2026 05:45:07 UTC] PHP Warning:  session_set_cookie_params(): Cannot change session cookie parameters when headers already sent in /home3/tekliftopla/public_html/ayar.php on line 53
+[16-Oct-2026 05:45:07 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home3/tekliftopla/public_html/ayar.php on line 55
+[16-Oct-2026 05:45:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/tekliftopla/public_html/en/sifrem-e.php:1) in /home3/tekliftopla/public_html/headeri.php on line 11
+[24-Oct-2026 19:45:14 UTC] PHP Warning:  SimpleXMLElement::__construct(http://www.tcmb.gov.tr/kurlar/today.xml): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Timeout
+ in /home3/tekliftopla/public_html/en/kur-e.php on line 3
+[24-Oct-2026 19:45:14 UTC] PHP Warning:  SimpleXMLElement::__construct(): I/O warning : failed to load external entity &quot;http://www.tcmb.gov.tr/kurlar/today.xml&quot; in /home3/tekliftopla/public_html/en/kur-e.php on line 3
+[24-Oct-2026 19:45:14 UTC] PHP Fatal error:  Uncaught Exception: String could not be parsed as XML in /home3/tekliftopla/public_html/en/kur-e.php:3
+Stack trace:
+#0 /home3/tekliftopla/public_html/en/kur-e.php(3): SimpleXMLElement->__construct('http://www.tcmb...', NULL, true)
+#1 /home3/tekliftopla/public_html/en/index-e.php(159): include('/home3/teklifto...')
+#2 {main}
+  thrown in /home3/tekliftopla/public_html/en/kur-e.php on line 3
+[24-Oct-2026 19:51:13 UTC] PHP Warning:  SimpleXMLElement::__construct(http://www.tcmb.gov.tr/kurlar/today.xml): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Timeout
+ in /home3/tekliftopla/public_html/en/kur-e.php on line 3
+[24-Oct-2026 19:51:13 UTC] PHP Warning:  SimpleXMLElement::__construct(): I/O warning : failed to load external entity &quot;http://www.tcmb.gov.tr/kurlar/today.xml&quot; in /home3/tekliftopla/public_html/en/kur-e.php on line 3
+[24-Oct-2026 19:51:13 UTC] PHP Fatal error:  Uncaught Exception: String could not be parsed as XML in /home3/tekliftopla/public_html/en/kur-e.php:3
+Stack trace:
+#0 /home3/tekliftopla/public_html/en/kur-e.php(3): SimpleXMLElement->__construct('http://www.tcmb...', NULL, true)
+#1 /home3/tekliftopla/public_html/en/index-e.php(159): include('/home3/teklifto...')
+#2 {main}
+  thrown in /home3/tekliftopla/public_html/en/kur-e.php on line 3

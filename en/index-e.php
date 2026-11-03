@@ -106,6 +106,14 @@ if ($cevap == 'epostayok') {?>
 <?php
 include "menu-e.php";
 include "sociallogin-e.php";
+if (isset($_SESSION['google_login_error'])) {
+    $googleLoginError = $_SESSION['google_login_error'];
+    unset($_SESSION['google_login_error']);
+    $googleLoginMessage = $googleLoginError === 'cancelled'
+        ? 'Google sign-in was cancelled. You can try again.'
+        : 'Google sign-in could not be completed. Please try again; if the problem continues, contact support.';
+    echo '<p role="alert" style="color:#a00; padding:6px;">' . htmlspecialchars($googleLoginMessage, ENT_QUOTES, 'UTF-8') . '</p>';
+}
 ?>
     </div>
     <div id="sat2g">
